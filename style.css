@@ -1,0 +1,25 @@
+body{ 
+    font-size: 50px;
+    color: white;
+    z-index: 10;
+}
+.img{
+    height: 500px;
+    position: absolute;
+    z-index: -1 ;
+    width: 1000px;
+    background-image: url("/images/download.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img:hover{
+    background-image: url("/images/rica.jpg");
+}
+.img div{ 
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+.img:hover div{ 
+    display: block;
+}
