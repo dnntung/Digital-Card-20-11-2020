@@ -2,6 +2,7 @@ body{
     background-image: url(/images/background.jpg);
     background-repeat: no-repeat;
     background-size: auto;
+    overflow: hidden;
 }
 .card{ 
     z-index: -1;
@@ -12,11 +13,11 @@ body{
     position: absolute;
     top: 100px;
     left: 40%;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .object>img{ 
     z-index: 10;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
 }
 .pencil{ 
     position: absolute;
@@ -33,5 +34,5 @@ body{
     z-index: 11;
     top: -450px;
     left: -500px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25 ));
 }
