@@ -1,0 +1,15 @@
+body{ 
+    background-image: url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.book{ 
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
