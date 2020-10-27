@@ -4,7 +4,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: "UTM Avo";
-    background-image: url(/images/background.jpg);
+    background-image: url(images/background.jpg);
     background-repeat: no-repeat;
     background-size: auto;
     overflow: hidden;
@@ -17,7 +17,7 @@ body{
     bottom: 0;
     z-index: -1;
     content: "";
-    background-image: url(/images/card-background.jpg);
+    background-image: url(images/card-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 20%;
@@ -63,8 +63,51 @@ body{
     top: -450px;
     left: -500px;
 }
-.card:hover + .object>.pencil { 
+.card:hover + .object>.pencil {
     top: 0px;
     right: 20px;
     transform: rotate(30deg);
 }
+
+.card:hover{
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 247, 0.25);
+}
+
+/* CREDIT NOTE */
+.credit_note{
+    background-color: #ffe4ea;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    z-index: -1;
+    width: 290px;
+    height: 260px;
+    transform: rotate(-20deg);
+    position: relative;
+    top: -40px;
+    left: 10%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.credit_note:hover{
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 247, 0.25);
+    transform: rotate(-10deg);
+
+}
+
+.credit_note_header{
+    font-family: "Gabriola";
+    position: absolute;
+    top: -12px;
+    margin-left: 50px;
+}
+
+.credit_note_name{
+    position: relative;
+    font-family: Gabriola;
+    margin-top: 10px;
+    font-size: 24px;
+    top: 40px;
+    left: 20px;
+}
+
