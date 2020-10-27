@@ -1,19 +1,48 @@
-body{ 
+body{
+    position: relative;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+    font-family: "UTM Avo";
     background-image: url(/images/background.jpg);
     background-repeat: no-repeat;
     background-size: auto;
     overflow: hidden;
 }
-.card{ 
+.card::before{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: -1;
-    width: 400px;
-    height: 580px;
+    content: "";
+    background-image: url(/images/card-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 20%;
+}
+.card{ 
+
+}
+.card{ 
+    cursor: pointer;
+    z-index: -1;
+    width: 580px;
+    height: 400px;
     background-color: white;
     transform: rotate(20deg);
-    position: absolute;
+    position: relative;
     top: 100px;
     left: 40%;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.card>.card-content{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .object>img{ 
     z-index: 10;
@@ -26,6 +55,8 @@ body{
     width: 500px;
     z-index: inherit;
     transform: rotate(20deg);
+
+    transition-duration: .5s;
 }
 .laptop{ 
     position: absolute;
@@ -34,5 +65,9 @@ body{
     z-index: 11;
     top: -450px;
     left: -500px;
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25 ));
+}
+.card:hover + .object>.pencil { 
+    top: 0px;
+    right: 20px;
+    transform: rotate(30deg);
 }
