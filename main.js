@@ -4,9 +4,6 @@ const modal = document.getElementById("letter_modal");
 // Get the button that opens the modal
 const btnModal = document.getElementById("card_letter");
 
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on the button, open the modal
 btnModal.onclick = function() {
     modal.style.display = "block";
