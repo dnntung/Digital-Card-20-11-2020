@@ -132,8 +132,16 @@ body *{
     margin-top: -10px;
 }
 
+.credit_note_closeBtn{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 /* ================================================================================================================== */
-/* ============================================= THE MODAL ========================================================== */
+/* ============================================= THE LETTER MODAL =================================================== */
 .modal {
     display: none;
     position: fixed;
@@ -148,6 +156,7 @@ body *{
 
 /* Modal Content/Box */
 .modal-box {
+    background-image: url("images/modal/background.jpg");
     background-color: #ffe0f3;
     margin: 5% auto;
     padding: 20px;
@@ -155,12 +164,21 @@ body *{
     width: 80%;
 }
 
-.modal-content{
-    margin-top: 10px;
+.modal_close_button{
+    position: absolute;
+    right: 150px;
+    width: 50px;
+    height: 50px;
 }
 
-.modal_space{
-    font-size: 20px !important;
+.modal_close_button:hover{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.modal-content{
+    margin-top: 40px;
 }
 
 .modal_letter_header{

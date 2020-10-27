@@ -1,17 +1,24 @@
 // Get the modal
-const modal = document.getElementById("letter_modal");
+const letter_modal = document.getElementById("letter_modal");
+const credit_modal = document.getElementById("credit_modal");
+
+// Close modal
+const btnCloseLetterModal = document.getElementById("modal_close_btn");
+const btnCloseCreditModal = document.getElementById("credit_modal_closeBtn");
 
 // Get the button that opens the modal
-const btnModal = document.getElementById("card_letter");
+const btnLetterModal = document.getElementById("card_letter");
+const btnCreditModal = document.getElementById("credit_note");
 
 // When the user clicks on the button, open the modal
-btnModal.onclick = function() {
-    modal.style.display = "block";
+btnLetterModal.onclick = function() {
+    letter_modal.style.display = "block";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+
+// When the user clicks on the button, close the modal
+btnCloseLetterModal.onclick = function() {
+    letter_modal.style.display = "none";
 }
+
+
