@@ -3,13 +3,25 @@ body{
     background-repeat: no-repeat;
     background-size: auto;
 }
-.book{ 
-    width: 300px;
-    height: 400px;
+.card{ 
+    z-index: -1;
+    width: 400px;
+    height: 580px;
     background-color: white;
     transform: rotate(20deg);
     position: absolute;
-    top: 30%;
-    left: 30%;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    top: 100px;
+    left: 40%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.object>img{ 
+    z-index: 10;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
+}
+.pencil{ 
+    position: absolute;
+    top: 60px;
+    right: 200px;
+    width: 500px;
+    transform: rotate(20deg);
 }
