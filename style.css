@@ -14,7 +14,7 @@ body{
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-image: url(/images/background.jpg);
+    background-image: url(images/background.jpg);
     font-family: "UTM Avo";
     padding: 0;
     margin: 0;
@@ -30,7 +30,7 @@ body *{
     bottom: 0;
     z-index: 0;
     content: "";
-    background-image: url(/images/card-background.jpg);
+    background-image: url(images/card-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 20%;
