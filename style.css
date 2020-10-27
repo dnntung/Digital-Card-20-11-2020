@@ -23,9 +23,6 @@ body{
     opacity: 20%;
 }
 .card{ 
-
-}
-.card{ 
     cursor: pointer;
     z-index: -1;
     width: 580px;
