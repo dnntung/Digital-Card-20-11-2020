@@ -1,13 +1,22 @@
-body{
-    position: relative;
-    z-index: -1;
+.table{
+    position: fixed;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    min-width: inherit;
+    max-width: 1000px;
+}
+body{ 
+    display: flex;
+    justify-content: center;
+    background-image: url(/images/background.jpg);
+    font-family: "UTM Avo";
     padding: 0;
     margin: 0;
-    font-family: "UTM Avo";
-    background-image: url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    overflow: hidden;
+    min-width: 800px;
+}
+body *{ 
+    transition-duration: .5s;
 }
 .card::before{ 
     position: absolute;
@@ -15,7 +24,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
     content: "";
     background-image: url(/images/card-background.jpg);
     background-repeat: no-repeat;
@@ -24,15 +33,13 @@ body{
 }
 .card{ 
     cursor: pointer;
-    z-index: -1;
-    width: 580px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     background-color: white;
-    transform: rotate(20deg);
-    position: relative;
-    top: 100px;
+    transform: rotate(10deg);
+    position: absolute;
+    bottom: 15%;
     left: 40%;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .card>.card-content{ 
     width: 100%;
@@ -41,30 +48,40 @@ body{
     justify-content: center;
     align-items: center;
 }
-.object>img{ 
-    z-index: 10;
+.table>div, 
+.table>img{ 
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
 }
 .pencil{ 
     position: absolute;
-    top: 60px;
-    right: 200px;
+    bottom: 25%;
+    left: 20%;
     width: 500px;
-    z-index: inherit;
+    transform: rotate(40deg);
+}
+.card:hover ~  .pencil{
+    bottom: 10%;
+    left: 20%;
     transform: rotate(20deg);
-
-    transition-duration: .5s;
 }
 .laptop{ 
     position: absolute;
-    width: 75%;
-    transform: rotate(-30deg);
+    width: 900px;
+    transform: rotate(-20deg);
     z-index: 11;
-    top: -450px;
-    left: -500px;
+    top: -45%;
+    left: -10%;
 }
-.card:hover + .object>.pencil { 
-    top: 0px;
-    right: 20px;
+
+.eraser{ 
+    position: absolute;
+    top: 40%;
+    width: 100px;
+    right: 20%;
     transform: rotate(30deg);
+}
+.card:hover ~ .eraser{ 
+    right: 5%;
+    top: 32%;
+    transform: rotate(50deg);
 }
