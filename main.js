@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const html = document.documentElement;
 const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
@@ -40,3 +41,17 @@ window.addEventListener('scroll', () => {
 });
 
 preloadImages()
+=======
+
+
+
+function pencilClick() {
+    const pencil = document.getElementById('pencil');
+    pencil.addEventListener("click", function () {
+            pencil.style.top = "0px";
+            pencil.style.transform = "rotate(0deg)";
+        pencil.onload;
+    })
+
+}
+>>>>>>> Stashed changes
