@@ -116,7 +116,7 @@ body *{
 }
 
 .note:hover{
-    top: 50%;
+    top: 45%;
     transform: rotate(-10deg);
 }
 
