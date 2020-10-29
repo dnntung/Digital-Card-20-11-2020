@@ -4,11 +4,12 @@
     width: 80%;
     height: 100%;
     max-width: 1000px;
-    min-width: 800px;
+    min-width: inherit;
 }
 html, body{ 
     width: 100%;
     height: 100%;
+    min-width: 800px;
 }
 body{
     overflow: hidden;
@@ -22,18 +23,21 @@ body{
 body *{ 
     transition-duration: .5s;
 }
-.card::before{ 
+.card-cover{ 
+    width: 100%;
+    height: 100%;
+}
+.card-cover::before{ 
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: -1;
     content: "";
     background-image: url(images/card-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 20%;
 }
 .card{ 
     cursor: pointer;
@@ -41,24 +45,31 @@ body *{
     height: 300px;
     background-color: white;
     transform: rotate(10deg);
-    position: absolute;
+    position: relative;
     top: 320px;
     left: 40%;
+    perspective: 2000px;
 }
-.card>.card-content{ 
+.card>.card-cover{ 
+    position: absolute;
     width: 100%;
     height: 100%;
+    top:0;
+    left:0;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform-origin: top;
+    transform-style: preserve-3d;
 }
 .table>div, 
 .table>img{ 
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
 }
 .pencil{ 
     position: absolute;
     bottom: 25%;
+    z-index: 10;
     left: 20%;
     width: 500px;
     transform: rotate(40deg);
@@ -68,13 +79,21 @@ body *{
     left: 20%;
     transform: rotate(20deg);
 }
+
+.card:hover{
+    transform: rotate(5deg);
+}
+.card:hover>.card-cover{
+    transform:  rotateX(50deg);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
+}
 .laptop{ 
     position: absolute;
     width: 900px;
-    transform: rotate(-20deg);
+    transform: rotate(-10deg);
     z-index: 11;
-    top: -45%;
-    left: -150px;
+    top: -35%;
+    left: -15%;
 }
 
 .eraser{ 
@@ -86,6 +105,98 @@ body *{
 }
 .card:hover ~ .eraser{ 
     right: 5%;
-    top: 30%;
+    top: 32%;
     transform: rotate(50deg);
+}
+
+/* =========================================== =========== ========================================================= */
+/* =========================================== CREDIT NOTE ========================================================= */
+.note{
+    font-family: "MTO  Astro City";
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    background-color: #ffff8d;
+    transform: rotate(-20deg);
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note:hover{
+    top: 45%;
+    transform: rotate(-10deg);
+}
+
+/* ================================================================================================================== */
+/* ============================================= THE LETTER MODAL =================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 12;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.57);
+}
+
+/* Modal Content/Box */
+.modal-box {
+    background-image: url("images/modal/background.jpg");
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal_close_button{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.modal_close_button:hover{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.right_modal_close_btn{
+    margin-right: 50px;
+    float: right;
+}
+
+.modal-content{
+    margin-top: 40px;
+}
+
+.modal_letter_header{
+    margin: 5px;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.modal_letter_second_header{
+    margin: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.title_modal_letter{
+    margin: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal_text{
+    font-size: 20px;
 }
