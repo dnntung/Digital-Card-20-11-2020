@@ -48,16 +48,19 @@ body *{
     position: relative;
     top: 320px;
     left: 40%;
-    perspective: 1000px;
+    perspective: 2000px;
 }
 .card>.card-cover{ 
+    position: absolute;
     width: 100%;
     height: 100%;
+    top:0;
+    left:0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    
+    transform-origin: top;
+    transform-style: preserve-3d;
 }
 .table>div, 
 .table>img{ 
@@ -81,11 +84,8 @@ body *{
     transform: rotate(5deg);
 }
 .card:hover>.card-cover{
-    
-    transform-style: preserve-3d;
-    transform:  rotateX(60deg);
-    transform-origin: top;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .25);
+    transform:  rotateX(50deg);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
 }
 .laptop{ 
     position: absolute;
@@ -105,7 +105,7 @@ body *{
 }
 .card:hover ~ .eraser{ 
     right: 5%;
-    top: 30%;
+    top: 32%;
     transform: rotate(50deg);
 }
 
