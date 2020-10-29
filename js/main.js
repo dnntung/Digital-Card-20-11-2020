@@ -1,1 +1,3 @@
-document.getElementById("audio").volume=0.5
+var audio=document.getElementById("audio");
+audio.play();
+audio.volume=0.5;
