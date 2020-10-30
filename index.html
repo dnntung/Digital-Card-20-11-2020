@@ -7,9 +7,6 @@
 </head>
 <body class="preload">
     <header>
-        <audio id="audio" autoplay>
-            <source src="audio/first_date.mp3" type="audio/mp3">
-        </audio>
     </header>
     <div id="shadow"></div>
     <div class="table">
@@ -24,6 +21,21 @@
         <img class="eraser low-shadow" src="images/eraser.png">
         <img class="pencil low-shadow" src="images/pencil.png">
         <img class="laptop normal-shadow" src="images/lt.png">
+
+        <div class="musicPlayer">
+            <img src="images/ipod.png" alt="ipod">
+            <div class="ipod_bg">
+                <div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
+                <div id="songTitle"></div>
+            </div>
+            <div id="seekBar">
+                <div id="fill"></div>
+                </div>
+            <button id="play_btn" onclick="playOrPause()"></button>
+        </div>
+
+
+
         <div id="note" class="note low-shadow">
             <div class="note-content">
                 Created by
