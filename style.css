@@ -10,7 +10,7 @@
     transition: none;
 }
 #shadow{ 
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
@@ -38,7 +38,6 @@ body *{
     font-family: "UTM Avo";
     width: 500px;
     height: 300px;
-    transform: rotate(10deg);
     position: relative;
     top: 320px;
     left: 40%;
@@ -67,13 +66,19 @@ body *{
     background-position: center;
     backface-visibility: hidden;
 }
+.card-hover{
+    transform: rotate(10deg);
+}
+.card.card-hover:hover{
+    transform: rotate(5deg);
+    cursor: pointer;
+}
 .card-cover>.front{ 
     background-image: url(images/card-background.png);
 }
 .card-cover>.back{ 
     background-image: url(images/modal/background.jpg);
     transform: rotateX(180deg);
-    box-shadow: inset 0px -5px 10px 0px rgba(0, 0, 0, .25);
 }
 .card>.card-content{
     width: 100%;
@@ -84,7 +89,6 @@ body *{
     background-size: cover;
     background-position: center;
     background-image: url(images/modal/background.jpg);
-    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, .25);
 }
 .low-shadow{
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
@@ -118,10 +122,6 @@ body *{
 .shadow_active{ 
     z-index: 99;
     background-color: rgba(0,0,0,0.5);
-}
-.card-hover:hover{
-    transform: rotate(5deg);
-    cursor: pointer;
 }
 .card-hover:hover>.card-cover{
     transform:  rotateX(50deg);
@@ -179,8 +179,9 @@ body *{
 /* ================================================================================================================== */
 /* ============================================= THE LETTER MODAL =================================================== */
 .modal {
-    display: block;
+    display: none;
     position: absolute;
+    opacity: 0;
     z-index: 999;
     left: 50%;
     top: 50%;

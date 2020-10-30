@@ -18,6 +18,7 @@ function card_toggle(){
         card.style.transform="translate(-50%, -50%) scale(2)";
         shadow.style.backgroundColor="rgba(0,0,0,0.75)";
         cardCover.style.transform="rotatex(180deg)";
+        document.body.style.overflow="auto";
     }
     else{ 
         card.style.height="300px";
@@ -29,5 +30,8 @@ function card_toggle(){
         setTimeout(function(){
             card.style.zIndex="unset";
         },500);
+        document.body.style.overflow="hidden";
     }
+
+    
 }
