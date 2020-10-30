@@ -12,6 +12,9 @@
             <source src="audio/first_date.mp3" type="audio/mp3">
         </audio>
     </header>
+    <div class="ipod">
+        <img src="images/ipod-png-11552939306xqxq1zi97y.png" alt="">
+    </div>
     <div class="table">
         <div class="card" id="card_letter">
             <div class="card-cover">
@@ -24,11 +27,11 @@
         <img class="eraser" src="images/eraser.png">
         <img class="pencil" src="images/pencil.png">
         <img class="laptop" src="images/lt.png">
-        <div class="note">
+        <a onmouseover="noteHover()" onmouseout="noteOutHover()" class="note" data-toggle="modal" href="#created_modal" id="created_note">
             <div class="note-content">
                 Created by
             </div>
-        </div>
+        </a>
     </div>
 
     <!-- =========================================================================================================== -->
@@ -57,9 +60,36 @@
 
     </div>
 
+    <!-- =========================================================================================================== -->
+    <!-- =========================================== THE CREATED MODAL ============================================== -->
+
+    <div id="created_modal" class="modal">
+
+        <!-- =========================================================================================================== -->
+        <!-- =================================== THE CREATED MODAL CONTENT ============================================== -->
+        <div class="modal-create-box">
+            <div class="right_modal_close_btn">
+                <img id="created_modal_closeBtn" class="modal_close_button" src="images/modal/close-bt.png" alt="">
+            </div>
+
+            <div class="modal-create-content">
+                <br>
+                <img id="laptop_image_create" src="images/laptop-drawing.png" alt="">
+                <hr>
+                <p class="created_text">Thi Ngọc Phú</p>
+                <hr>
+                <p class="created_text">Nguyễn Khánh Vinh</p>
+                <hr>
+                <p class="created_text">Đinh Nguyễn Nhật Tùng</p>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 <footer>
-    <script type="text/javascript" src="js/main.js">...</script> 
+    <script type="text/javascript" src="js/main.js"></script>
 </footer>
 </html>

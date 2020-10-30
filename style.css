@@ -113,6 +113,7 @@ body *{
 /* =========================================== =========== ========================================================= */
 /* =========================================== CREDIT NOTE ========================================================= */
 .note{
+    text-decoration: none;
     font-family: "MTO  Astro City";
     cursor: pointer;
     width: 150px;
@@ -126,6 +127,8 @@ body *{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
+    font-weight: bold;
 }
 
 .note:hover{
@@ -158,18 +161,19 @@ body *{
 
 .modal_close_button{
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
 }
 
 .modal_close_button:hover{
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 
 .right_modal_close_btn{
-    margin-right: 50px;
+    margin-right: 20px;
+    margin-top: 10px;
     float: right;
 }
 
@@ -201,6 +205,41 @@ body *{
 .modal_text{
     font-size: 20px;
 }
+
+/* ================================================================================================================== */
+/* ============================================= THE CREATED MODAL =================================================== */
+
+/* Modal Content/Box */
+.modal-create-box {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    background-color: #ffffb0;
+    margin: 5% auto;
+    padding: 0 20px 30px 20px;
+    border: 1px solid #888;
+    width: 20%;
+}
+
+.created_text{
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: Georgia;
+}
+
+#laptop_image_create{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    transform: rotate(20deg);
+}
+
+
+/* ================================================================================================================== */
+/* ============================================= AUDIO =================================================== */
+
 audio{ 
     position: fixed;
     right: 20px;
@@ -208,3 +247,4 @@ audio{
     z-index: 9999;
     outline: none;
 }
+
