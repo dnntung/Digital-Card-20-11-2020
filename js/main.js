@@ -19,34 +19,14 @@ const btnCreatemodal = document.getElementById("created_note");
 const cardtext = document.getElementById("card-text-header");
 const pencil = document.getElementById("pencil");
 
-// When the user clicks on the button, open the modal
-btnLetterModal.onclick = function() {
-    letter_modal.style.display = "block";
-}
 
+
+// =============================================== NOTE PART =============================================== //
+    // Display the note modal
 btnCreatemodal.onclick = function() {
     created_modal.style.display = "block";
     btnCreatemodal.style.display = "none";
 }
-
-
-
-
-// When the user clicks on the button, close the modal
-function closeLetter() {
-    btnCloseLetterModal.onclick = function() {
-        letter_modal.style.display = "none";
-        btnLetterModal.style.transform = "rotate(10deg) scale(1.0)";
-        btnLetterModal.style.top = "320px";
-        btnLetterModal.style.left = "40%";
-        btnLetterCoverModal.style.transform = "rotateX(0deg)";
-        btnLetterCoverModal.style.backgroundImage =  'url(images/card-background.jpg)';
-        cardtext.style.display = "block";
-        pencil.style.display = "block";
-    }
-}
-
-closeLetter();
 
 function closeNote() {
     btnCloseCreatedModal.onclick = function () {
@@ -67,6 +47,13 @@ function noteOutHover() {
     btnLetterCoverModal.style.transform = "rotateX(0deg)";
 }
 
+// =============================================== CARD PART =============================================== //
+function showCardContent() {
+        letter_modal.style.display = "block";
+}
+
+
+    // Display the card modal if click
 function letterOpen() {
     btnLetterModal.style.transform = "rotate(0deg) scale(2.0)";
     btnLetterModal.style.top = "110%";
@@ -77,8 +64,29 @@ function letterOpen() {
     // Hide pencil and text from table
     cardtext.style.display = "none";
     pencil.style.display = "none";
-
 }
+
+function closeLetter() {
+    btnCloseLetterModal.onclick = function() {
+        letter_modal.style.display = "none";
+        btnLetterModal.style.transform = "rotate(10deg) scale(1.0)";
+        btnLetterModal.style.top = "320px";
+        btnLetterModal.style.left = "40%";
+        btnLetterCoverModal.style.transform = "rotateX(0deg)";
+        btnLetterCoverModal.style.backgroundImage =  'url(images/card-background.jpg)';
+        cardtext.style.display = "block";
+        pencil.style.display = "block";
+    }
+}
+
+function card() {
+    console.log(1);
+    letterOpen();
+    const id = setTimeout(showCardContent,500);
+}
+
+
+
 
 // Call function
 

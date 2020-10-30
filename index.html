@@ -16,7 +16,7 @@
 <!--        <img src="images/ipod-png-11552939306xqxq1zi97y.png" alt="">-->
 <!--    </div>-->
     <div class="table">
-        <div class="card" id="card_letter" onmouseup="letterOpen()">
+        <div class="card" id="card_letter" onmouseup="card()">
             <div class="card-cover" id="card_cover_letter">
                 <h1 id="card-text-header">Thiệp 20/11</h1>
             </div>
@@ -43,7 +43,7 @@
         <!-- =================================== THE LETTER MODAL CONTENT ============================================== -->
         <div class="modal-box">
             <div class="right_modal_close_btn">
-                <img id="modal_close_btn" class="modal_close_button" src="images/modal/close-bt.png" alt="">
+                <img id="modal_close_btn" class="modal_close_button" src="images/modal/close-bt.png" alt="" onclick="closeLetter();clearInterval(id);">
             </div>
 
             <div class="modal-content">
