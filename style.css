@@ -21,6 +21,7 @@ body{
     margin: 0;
 }
 body *{ 
+    outline: none;
     transition-duration: .5s;
 }
 .card-cover{ 
@@ -199,4 +200,11 @@ body *{
 
 .modal_text{
     font-size: 20px;
+}
+audio{ 
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    outline: none;
 }
