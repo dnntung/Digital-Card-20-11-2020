@@ -159,9 +159,6 @@ body *{
     display: flex;
     align-items: center;
     justify-content: center;
-    
-}
-#note>.content>.back{ 
 }
 #note.hover:hover{
     top: 45%;
@@ -255,4 +252,55 @@ audio{
     bottom: 20px;
     z-index: 9999;
     outline: none;
+}
+.user-info{ 
+    position: relative;
+}
+.user-info{
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.user{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20%;
+    font-size: 10px;
+    padding: 5px;
+}
+.user>.avatar{ 
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+#sv-518h0584>.avatar{ 
+    background-image: url(images/avatar/518h0584.jpg);
+}
+#sv-518h0076>.avatar{ 
+    background-image: url(images/avatar/518h0076.jpg);
+}
+#sv-518h0044>.avatar{ 
+    background-image: url(images/avatar/518h0044.jpg);
+}
+.sticker{ 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.sticker>img{ 
+    position: absolute;
+}
+.sticker>img:nth-child(1){ 
+    width: 60px;
+    bottom: -10px;
+    left: -10px;
+    transform: rotate(20deg);
+    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }

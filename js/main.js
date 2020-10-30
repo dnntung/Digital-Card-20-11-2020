@@ -14,11 +14,13 @@ function card_toggle(){
         card.style.top="50%";
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
+        card.style.boxShadow="0px 0px 10px 0px rgba(0,0,0, 0.5)";
         shadow.style.backgroundColor="rgba(0,0,0,0.75)";
         cardCover.style.transform="rotatex(180deg)";
         document.body.style.overflow="auto";
     }
     else{ 
+        card.style.boxShadow="";
         card.style.top="";
         card.style.left="";
         card.style.height="300px";
@@ -46,8 +48,13 @@ function note_toggle(){
         note.style.transform="translate(-50%, -50%) scale(3)";
         shadow.style.backgroundColor="rgba(0,0,0,0.75)";
         noteContent.style.transform="rotatex(180deg)";
+        setTimeout(function(){
+            note.style.boxShadow="0px 0px 10px 0px rgba(0,0,0, 0.5)";
+        },300);
+        
     }
     else{ 
+        note.style.boxShadow="";    
         note.style.top="";
         note.style.left="";
         note.style.transform="";
