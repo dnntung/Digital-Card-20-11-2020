@@ -7,26 +7,31 @@
 </head>
 <body class="preload">
     <header>
-        <audio id="audio" autoplay>
+        <audio id="audio" > <!---Thêm autoplay!!-->>
             <source src="audio/first_date.mp3" type="audio/mp3">
         </audio>
     </header>
     <div id="shadow"></div>
     <div class="table">
-        <div class="card low-shadow card-hover" id="card" onclick="card_toggle()">
+        <div class=" low-shadow hover" id="card" onclick="card_toggle()">
             <div class="card-cover">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card-content">
+            <div class="content">
             </div>            
         </div>
-        <img class="eraser low-shadow" src="images/eraser.png">
-        <img class="pencil low-shadow" src="images/pencil.png">
-        <img class="laptop normal-shadow" src="images/lt.png">
-        <div id="note" class="note low-shadow">
-            <div class="note-content">
-                Created by
+        <img id="eraser" class= low-shadow" src="images/eraser.png">
+        <img id="pencil" class=" low-shadow" src="images/pencil.png">
+        <img id="laptop" class=" normal-shadow" src="images/lt.png">
+        <div id="note" class=" low-shadow hover" onclick="note_toggle()">
+            <div class="content">
+                <div class="front">
+                    <div>Created by</div>
+                </div>
+                <div class="back">
+                    LoL
+                </div>
             </div>
         </div>
     </div>
