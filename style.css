@@ -84,6 +84,7 @@ body *{
 }
 
 .card:hover{
+    box-shadow: 0 0 20px #ffe6a0;
     transform: rotate(5deg);
 }
 .card:hover>.card-cover{
@@ -147,6 +148,7 @@ body *{
 }
 
 .note:hover{
+    box-shadow: 0 0 20px #ffe6a0;
     top: 55%;
     transform: rotate(-10deg);
 }
@@ -256,6 +258,7 @@ body *{
     top: 40px;
     transform: rotate(20deg);
 }
+
 
 
 /* ================================================================================================================== */
