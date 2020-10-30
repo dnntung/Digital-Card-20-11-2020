@@ -1,7 +1,5 @@
 window.onload=document.body.classList.remove("preload");
 
-audio.volume=0.5;
-
 function card_toggle(){
     cardCover=card.getElementsByClassName("card-cover")[0];
     cardContent=card.getElementsByClassName("content")[0];
@@ -71,7 +69,6 @@ function note_toggle(){
 /*MUSIC PLAYER*/
 var playingSong="audio/first_date.mp3";
 
-var songTitle = document.getElementById("songTitle");
 var barFill = document.getElementById("fill");
 
 var song = new Audio();
@@ -81,15 +78,16 @@ window.onload = playSong;
 
 function playSong(){
     song.src = playingSong;
-    songTitle.textContent = playingSong.substring(6);
     song.play();
     audio.volume=0.5;
 }
 
 function playOrPause(){
     if(song.paused){
+        play_btn.innerHTML="&#9658;"
         song.play();
     } else{
+        play_btn.innerHTML="||"
         song.pause();
     }
 }

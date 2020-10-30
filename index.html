@@ -11,6 +11,21 @@
     </header>
     <div id="shadow"></div>
     <div class="table">
+        <div id="musicPlayer" class=" low-shadow">
+            <img src="images/ipod.png" alt="ipod">
+            <button id="play_btn" onclick="playOrPause()">&#9658;</button>
+            <div class="ipod-screen">
+                <div class="ipod-bg"></div>
+                <div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
+                <div class="bar">
+                    <div id="seekBar">
+                        <div id="fill"></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
         <div class=" low-shadow hover" id="card" onclick="card_toggle()">
             <div class="card-cover">
                 <div class="front"></div>
@@ -19,17 +34,7 @@
             <div class="content">
             </div>            
         </div>
-        <div class="musicPlayer">
-            <img src="images/ipod.png" alt="ipod">
-            <div class="ipod_bg">
-                <div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
-                <div id="songTitle"></div>
-            </div>
-            <div id="seekBar">
-                <div id="fill"></div>
-                </div>
-            <button id="play_btn" onclick="playOrPause()"></button>
-        </div>
+        
         <img id="eraser" class= "normal-shadow" src="images/eraser.png">
         <img id="pencil" class=" low-shadow" src="images/pencil.png">
         <img id="laptop" class=" normal-shadow" src="images/lt.png">
