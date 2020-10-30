@@ -16,16 +16,16 @@
 <!--        <img src="images/ipod-png-11552939306xqxq1zi97y.png" alt="">-->
 <!--    </div>-->
     <div class="table">
-        <div class="card" id="card_letter">
-            <div class="card-cover">
-                <h1>Thiệp 20/11</h1>
+        <div class="card" id="card_letter" onmouseup="letterOpen()">
+            <div class="card-cover" id="card_cover_letter">
+                <h1 id="card-text-header">Thiệp 20/11</h1>
             </div>
             <div class="card-content">
                 
             </div>            
         </div>
         <img class="eraser" src="images/eraser.png">
-        <img class="pencil" src="images/pencil.png">
+        <img id="pencil" class="pencil" src="images/pencil.png">
         <img class="laptop" src="images/lt.png">
         <a onmouseover="noteHover()" onmouseout="noteOutHover()" class="note" data-toggle="modal" href="#created_modal" id="created_note">
             <div class="note-content">
