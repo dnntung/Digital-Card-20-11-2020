@@ -140,6 +140,90 @@ body *{
     transform: rotate(50deg);
 }
 
+
+
+/* MUSIC PLAYER */
+
+.musicPlayer{
+    position: relative;
+    transform: rotate(-15deg);
+    bottom: 46%;
+    left: 95%;
+    overflow: hidden;
+    z-index: 2;
+  
+
+}
+
+.ipod_bg{
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    background-color: blueviolet;
+    bottom: 57%;
+    left: 1%;
+    z-index: -1;
+}
+
+
+.statusBar{
+    position: absolute;
+    top: 4%;
+    left: 3%;
+}
+
+
+
+
+#songTitle{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 45%;
+    text-align: center;
+}
+
+
+
+#play_btn{
+    position: absolute;
+    width: 23px;
+    height: 13px;
+    top: 83%;
+    left: 10%;
+    background-image: url(images/ipod_btn.png);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#seekBar{
+    position: absolute;
+    width: 165px;
+    height: 5px;
+    background-color: gray;
+    top: 36%;
+    left: 3%;
+}
+
+#fill{
+position: absolute;
+width: 5px;
+height: 5px;
+background-color:royalblue;
+}
+
+
+
+
+
+
+
+
+
+
 /* =========================================== =========== ========================================================= */
 /* =========================================== CREDIT NOTE ========================================================= */
 #note{
@@ -245,6 +329,7 @@ body *{
 
 .modal_text{
     font-size: 20px;
+
 }
 audio{ 
     position: fixed;

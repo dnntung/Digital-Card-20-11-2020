@@ -1,4 +1,5 @@
 window.onload=document.body.classList.remove("preload");
+
 audio.volume=0.5;
 
 function card_toggle(){
@@ -67,3 +68,34 @@ function note_toggle(){
         },300);
     }
 }
+/*MUSIC PLAYER*/
+var playingSong="audio/first_date.mp3";
+
+var songTitle = document.getElementById("songTitle");
+var barFill = document.getElementById("fill");
+
+var song = new Audio();
+
+window.onload = playSong;
+
+
+function playSong(){
+    song.src = playingSong;
+    songTitle.textContent = playingSong.substring(6);
+    song.play();
+    audio.volume=0.5;
+}
+
+function playOrPause(){
+    if(song.paused){
+        song.play();
+    } else{
+        song.pause();
+    }
+}
+
+song.addEventListener('timeupdate',function(){
+
+    var position = song.currentTime / song.duration;
+    barFill.style.width = position * 100 + '%';
+});
