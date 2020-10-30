@@ -84,10 +84,10 @@ function playSong(){
 
 function playOrPause(){
     if(song.paused){
-        play_btn.innerHTML="&#9658;"
+        play_btn.innerHTML="||"
         song.play();
     } else{
-        play_btn.innerHTML="||"
+        play_btn.innerHTML="&#9658;"
         song.pause();
     }
 }
