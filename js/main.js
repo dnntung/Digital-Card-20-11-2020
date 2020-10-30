@@ -22,7 +22,12 @@ btnLetterModal.onclick = function() {
 btnCreatemodal.onclick = function() {
     created_modal.style.display = "block";
     btnCreatemodal.style.display = "none";
+    const id = setInterval(frame,5);
+    function frame() {
+
+    }
 }
+
 
 // When the user clicks on the button, close the modal
 btnCloseLetterModal.onclick = function() {
