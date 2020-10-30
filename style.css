@@ -34,7 +34,7 @@ body *{
     outline: none;
     transition-duration: .5s;
 }
-.card{ 
+#card{ 
     font-family: "UTM Avo";
     width: 500px;
     height: 300px;
@@ -43,7 +43,7 @@ body *{
     left: 40%;
     perspective: 2000px;
 }
-.card>.card-cover{ 
+#card>.card-cover{ 
     position: absolute;
     width: 100%;
     height: 300px;
@@ -60,16 +60,21 @@ body *{
 .front, .back{
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     backface-visibility: hidden;
 }
-.card-hover{
+.back{
+    transform: rotateX(180deg);
+}
+#card.hover{
     transform: rotate(10deg);
 }
-.card.card-hover:hover{
+#card.hover:hover{
     transform: rotate(5deg);
     cursor: pointer;
 }
@@ -78,9 +83,9 @@ body *{
 }
 .card-cover>.back{ 
     background-image: url(images/modal/background.jpg);
-    transform: rotateX(180deg);
+    
 }
-.card>.card-content{
+#card>.content{
     width: 100%;
     height: 300px;
     position: absolute;
@@ -96,11 +101,7 @@ body *{
 .normal-shadow{
     filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, .25));
 }
-.table>div, 
-.table>img{ 
-    
-}
-.pencil{ 
+#pencil{ 
     position: absolute;
     bottom: 8%;
     z-index: 10;
@@ -108,30 +109,16 @@ body *{
     width: 500px;
     transform: rotate(20deg);
 }
-.card-hover:hover ~  .pencil{
+#card.hover:hover ~  #pencil{
     bottom: 5%;
     left: 20%;
     transform: rotate(10deg);
 }
-.card_active{
-    height: 600px;
-    transform: scale(2);
-    transform-origin: 0 0;
-    z-index: 100;
-}
-.shadow_active{ 
-    z-index: 99;
-    background-color: rgba(0,0,0,0.5);
-}
-.card-hover:hover>.card-cover{
+#card.hover:hover>.card-cover{
     transform:  rotateX(50deg);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
 }
-.card-cover_active{ 
-    transform: rotateX(180deg) !important;
-}
-
-.laptop{ 
+#laptop{ 
     position: absolute;
     width: 900px;
     transform: rotate(-10deg);
@@ -140,14 +127,14 @@ body *{
     left: -15%;
 }
 
-.eraser{ 
+#eraser{ 
     position: absolute;
     top: 40%;
     width: 100px;
     right: 50px;
     transform: rotate(30deg);
 }
-.card-hover:hover ~ .eraser{ 
+#card.hover:hover ~ #eraser{ 
     right: 2%;
     top: 34%;
     transform: rotate(50deg);
@@ -239,25 +226,33 @@ background-color:royalblue;
 
 /* =========================================== =========== ========================================================= */
 /* =========================================== CREDIT NOTE ========================================================= */
-.note{
+#note{
     font-family: "MTO  Astro City";
-    cursor: pointer;
     width: 150px;
     height: 150px;
-    background-color: #ffff8d;
-    transform: rotate(-20deg);
     position: absolute;
-    top: 40%;
-    left: 10%;
+}
+#note>.content{
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    background-color: #ffff8d;
+}
+#note>.content>.front{
     text-transform: uppercase;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
-
-.note:hover{
+#note.hover:hover{
     top: 45%;
     transform: rotate(-10deg);
+    cursor: pointer;
+}
+#note.hover{ 
+    transform: rotate(-20deg);
+    top: 40%;
+    left: 10%;
 }
 
 /* ================================================================================================================== */
@@ -334,4 +329,70 @@ background-color:royalblue;
 
 .modal_text{
     font-size: 20px;
+
+}
+audio{ 
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    outline: none;
+}
+.user-info{ 
+    position: relative;
+}
+.user-info{
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.user{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20%;
+    font-size: 10px;
+    padding: 5px;
+}
+.user>.avatar{ 
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+#sv-518h0584>.avatar{ 
+    background-image: url(images/avatar/518h0584.jpg);
+}
+#sv-518h0076>.avatar{ 
+    background-image: url(images/avatar/518h0076.jpg);
+}
+#sv-518h0044>.avatar{ 
+    background-image: url(images/avatar/518h0044.jpg);
+}
+.sticker{ 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.sticker>img{ 
+    position: absolute;
+}
+.sticker>img:nth-child(1){ 
+    width: 50px;
+    bottom: -10px;
+    left: -10px;
+    transform: rotate(20deg);
+    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
+}
+.sticker>img:nth-child(2){ 
+    width: 40px;
+    bottom: -10px;
+    right: -10px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
