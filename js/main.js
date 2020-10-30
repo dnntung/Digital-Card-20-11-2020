@@ -10,7 +10,7 @@ function card_toggle(){
         card.style.zIndex="100";
         card.style.height="600px";
         card.style.transformOrigin="top";
-        card.style.top="50%";
+        card.style.top="20%";
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
         card.style.boxShadow="0px 0px 10px 0px rgba(0,0,0, 0.5)";
