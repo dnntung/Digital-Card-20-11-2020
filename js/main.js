@@ -21,14 +21,16 @@ function card_toggle(){
         document.body.style.overflow="auto";
     }
     else{ 
+        card.style.top="";
+        card.style.left="";
         card.style.height="300px";
-        card.style.transform="rotate(10deg)";
-        card.style.transformOrigin="unset";
-        shadow.style.backgroundColor="unset";
-        cardCover.style.transform="rotateX(20deg)";
-        shadow.style.zIndex="unset";
+        card.style.transform="";
+        card.style.transformOrigin="";
+        shadow.style.backgroundColor="";
+        cardCover.style.transform="";
+        shadow.style.zIndex="";
         setTimeout(function(){
-            card.style.zIndex="unset";
+            card.style.zIndex="";
         },500);
         document.body.style.overflow="hidden";
     }
