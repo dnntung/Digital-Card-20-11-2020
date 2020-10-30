@@ -1,3 +1,2 @@
-var audio=document.getElementById("audio");
-audio.play();
+window.onload=document.body.classList.remove("preload");
 audio.volume=0.5;

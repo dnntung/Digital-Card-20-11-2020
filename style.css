@@ -6,6 +6,15 @@
     max-width: 1000px;
     min-width: inherit;
 }
+.preload *{ 
+    transition: none;
+}
+.shadow{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
+}
 html, body{ 
     width: 100%;
     height: 100%;
@@ -15,8 +24,9 @@ body{
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-image: url(images/background.jpg);
-    font-family: "UTM Avo";
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(images/table5.jpg);
     padding: 0;
     margin: 0;
 }
@@ -36,11 +46,13 @@ body *{
     bottom: 0;
     z-index: -1;
     content: "";
-    background-image: url(images/card-background.jpg);
+    background-image: url(images/card-background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .card{ 
+    font-family: "UTM Avo";
     cursor: pointer;
     width: 500px;
     height: 300px;
@@ -63,9 +75,20 @@ body *{
     transform-origin: top;
     transform-style: preserve-3d;
 }
+.card>.card-content{
+    width: 100%;
+    height: 100%;
+    background-image: url(images/modal/background.jpg);
+}
+.low-shadow{
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
+}
+.normal-shadow{
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, .25));
+}
 .table>div, 
 .table>img{ 
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
+    
 }
 .pencil{ 
     position: absolute;
@@ -105,8 +128,8 @@ body *{
     transform: rotate(30deg);
 }
 .card:hover ~ .eraser{ 
-    right: 5%;
-    top: 32%;
+    right: 2%;
+    top: 34%;
     transform: rotate(50deg);
 }
 

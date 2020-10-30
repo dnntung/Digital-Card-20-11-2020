@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>20/11/2020...</title>
 </head>
-<body>
+<body class="preload">
     <header>
-        <audio id="audio" controls autoplay>
+        <audio id="audio" autoplay>
             <source src="audio/first_date.mp3" type="audio/mp3">
         </audio>
     </header>
+    <div class="shadow"></div>
     <div class="table">
-        <div class="card" id="card_letter">
+        <div class="card low-shadow" id="card_letter">
             <div class="card-cover">
-                <h1>Thiệp 20/11</h1>
             </div>
             <div class="card-content">
                 
             </div>            
         </div>
-        <img class="eraser" src="images/eraser.png">
-        <img class="pencil" src="images/pencil.png">
-        <img class="laptop" src="images/lt.png">
-        <div class="note">
+        <img class="eraser low-shadow" src="images/eraser.png">
+        <img class="pencil low-shadow" src="images/pencil.png">
+        <img class="laptop normal-shadow" src="images/lt.png">
+        <div class="note low-shadow">
             <div class="note-content">
                 Created by
             </div>
@@ -58,8 +57,20 @@
     </div>
 
 </body>
+<footer 
+    style="position: fixed; bottom: 20px; right: 0; 
+    display: flex; justify-content: flex-end;
+    width: 100%; align-items: center;">
+    <div style="text-align: right;
+    line-height: 1.25; font-weight: bold;
+    font-size: 18px">
+        <span id="icon-name" style="display: block;">18H50201</span>
+        <span style="display: block;">Digital_Joy</span>
+    </div>
+    <img style="width: 120px;
+    height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
 
-<footer>
-    <script type="text/javascript" src="js/main.js">...</script> 
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/main.js"></script> 
 </footer>
 </html>
