@@ -14,6 +14,8 @@ function card_toggle(){
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
         card.style.boxShadow="0px 0px 10px 0px rgba(0,0,0, 0.5)";
+        shadow.style.position="absolute";
+        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
         shadow.style.backgroundColor="rgba(0,0,0,0.75)";
         cardCover.style.transform="rotatex(180deg)";
         document.body.style.overflow="auto";
@@ -26,12 +28,15 @@ function card_toggle(){
         card.style.transform="";
         card.style.transformOrigin="";
         shadow.style.backgroundColor="";
+        shadow.style.position="";
+        shadow.style.height="";
         cardCover.style.transform="";
         shadow.style.zIndex="";
         setTimeout(function(){
             card.style.zIndex="";
         },500);
         document.body.style.overflow="hidden";
+        
     }
 }
 function note_toggle(){ 
@@ -79,6 +84,7 @@ window.onload = playSong;
 function playSong(){
     song.src = playingSong;
     song.play();
+    play_btn.innerHTML="||"
     audio.volume=0.5;
 }
 
@@ -96,4 +102,7 @@ song.addEventListener('timeupdate',function(){
 
     var position = song.currentTime / song.duration;
     barFill.style.width = position * 100 + '%';
+    if (position==1){ 
+        play_btn.innerHTML="&#9658;";
+    }
 });
