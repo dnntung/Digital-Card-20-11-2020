@@ -137,7 +137,6 @@ body *{
     top: -270px;
     left: -120px;
 }
-
 #eraser{ 
     position: absolute;
     top: 40%;
@@ -221,18 +220,19 @@ body *{
     text-align: center;
 }
 #play_btn{
+    border: none;
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    border: 3px solid #353535;
+    background-color: lightgray;
     transform: translateX(-50%);
     left: 50%;
-    top: 20px;
+    top: 15%;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: bold;
 }
-
 #seekBar{
     width: 80%;
     height: 100%;
@@ -242,12 +242,12 @@ body *{
     left: 0;
     overflow: hidden;   
 }
-
 #fill{
     width: 5px;
     height: 5px;
     background-color:#353535;
 }
+
 /* =========================================== =========== ========================================================= */
 /* =========================================== CREDIT NOTE ========================================================= */
 #note{
@@ -279,6 +279,7 @@ body *{
     left: 10%;
 }
 
+
 /* ================================================================================================================== */
 /* ============================================= THE LETTER MODAL =================================================== */
 .modal {
@@ -300,6 +301,7 @@ body *{
     right: 10px;
 }
 
+
 /* Modal Content/Box */
 .modal-box {
     background-image: url("images/modal/background.jpg");
@@ -308,59 +310,43 @@ body *{
     border: 1px solid #888;
     width: 80%;
 }
-
 .modal_close_button{
     position: absolute;
     width: 50px;
     height: 50px;
 }
-
 .modal_close_button:hover{
     cursor: pointer;
     width: 60px;
     height: 60px;
 }
-
 .right_modal_close_btn{
     margin-right: 50px;
     float: right;
 }
-
 .modal-content{
     margin-top: 40px;
 }
-
 .modal_letter_header{
     margin: 5px;
     font-weight: bold;
     font-size: 40px;
     text-align: center;
 }
-
 .modal_letter_second_header{
     margin: 5px;
     font-weight: bold;
     font-size: 30px;
     text-align: center;
 }
-
 .title_modal_letter{
     margin: 5px;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
 }
-
 .modal_text{
     font-size: 20px;
-
-}
-audio{ 
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 9999;
-    outline: none;
 }
 .user-info{ 
     position: relative;

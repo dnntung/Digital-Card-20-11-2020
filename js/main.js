@@ -3,8 +3,8 @@ window.onload=document.body.classList.remove("preload");
 
 /*CARD DISPLAY*/
 function card_toggle(){
-    cardCover=card.getElementsByClassName("card-cover")[0];
-    cardContent=card.getElementsByClassName("content")[0];
+    var cardCover=card.getElementsByClassName("card-cover")[0];
+    var cardContent=card.getElementsByClassName("content")[0];
     card.classList.toggle("hover");
 
     if (card.style.zIndex!="100"){
@@ -50,9 +50,10 @@ function card_toggle(){
     /* TOGGLE OBJECT's SHADOW*/
     card.classList.toggle("low-shadow");
 }
+
 /*NOTE DISPLAY*/
 function note_toggle(){ 
-    noteContent=note.getElementsByClassName("content")[0];
+    var noteContent=note.getElementsByClassName("content")[0];
     note.classList.toggle("hover");
 
     if (note.style.zIndex!="100"){
@@ -84,6 +85,7 @@ function note_toggle(){
     /* TOGGLE OBJECT's SHADOW*/
     note.classList.toggle("low-shadow");
 }
+
 /*MUSIC PLAYER*/
 var playingSong="audio/first_date.mp3";
 var barFill = document.getElementById("fill");
@@ -109,7 +111,6 @@ function playOrPause(){
 }
 
 song.addEventListener('timeupdate',function(){
-
     var position = song.currentTime / song.duration;
     barFill.style.width = position * 100 + '%';
     if (position==1){ 
