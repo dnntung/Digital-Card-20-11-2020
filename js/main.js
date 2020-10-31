@@ -14,9 +14,8 @@ function card_toggle(){
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
         card.style.boxShadow="0px 0px 10px 0px rgba(0,0,0, 0.5)";
-        shadow.style.position="absolute";
         shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
-        shadow.style.backgroundColor="rgba(0,0,0,0.75)";
+        shadow.style.opacity="100%";
         cardCover.style.transform="rotatex(180deg)";
         document.body.style.overflow="auto";
     }
@@ -27,6 +26,7 @@ function card_toggle(){
         card.style.height="300px";
         card.style.transform="";
         card.style.transformOrigin="";
+        shadow.style.opacity="";
         shadow.style.backgroundColor="";
         shadow.style.position="";
         shadow.style.height="";
