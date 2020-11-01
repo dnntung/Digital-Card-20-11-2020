@@ -5,19 +5,20 @@ window.onload=document.body.classList.remove("preload");
 function card_toggle(){
     var cardCover=card.getElementsByClassName("card-cover")[0];
     var cardContent=card.getElementsByClassName("content")[0];
+    /*ADD/REMOVE HOVER EFFECT*/
     card.classList.toggle("hover");
 
     if (card.style.zIndex!="100"){
-        shadow.style.zIndex="99";
-        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
-        shadow.style.opacity="100%";
-
         card.style.zIndex="100";
         card.style.height="600px";
         card.style.transformOrigin="top";
         card.style.top="20%";
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
+
+        shadow.style.zIndex="99";
+        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
+        shadow.style.opacity="100%";
         
         cardCover.style.transform="rotatex(180deg)";
 
@@ -54,6 +55,7 @@ function card_toggle(){
 /*NOTE DISPLAY*/
 function note_toggle(){ 
     var noteContent=note.getElementsByClassName("content")[0];
+    var stickers=note.getElementsByClassName("sticker")[0];
     note.classList.toggle("hover");
 
     if (note.style.zIndex!="100"){
@@ -66,9 +68,13 @@ function note_toggle(){
         note.style.left="50%";
         note.style.transform="translate(-50%, -50%) scale(3)";
 
-        noteContent.style.transform="rotatex(180deg)";        
+        noteContent.style.transform="rotatex(180deg)";  
+        
+        stickers.classList.add("sticker-active");
     }
     else{   
+        stickers.classList.remove("sticker-active");
+
         note.style.top="";
         note.style.left="";
         note.style.transform="";
@@ -84,6 +90,7 @@ function note_toggle(){
     }
     /* TOGGLE OBJECT's SHADOW*/
     note.classList.toggle("low-shadow");
+    
 }
 
 /*MUSIC PLAYER*/
@@ -95,9 +102,11 @@ window.onload = playSong;
 
 function playSong(){
     song.src = playingSong;
-    song.play();
-    play_btn.innerHTML="||"
-    audio.volume=0.5;
+    song.volume=0.2;
+    //song.play();
+    if (!song.paused==true){ 
+        play_btn.innerHTML="||"
+    }
 }
 
 function playOrPause(){
