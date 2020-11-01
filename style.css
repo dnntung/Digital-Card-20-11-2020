@@ -2,6 +2,10 @@
     font-family: "UTM Androgyne";
     src: url(fonts/UTM_Androgyne.ttf) format("truetype");
 }
+@font-face{ 
+    font-family: "MTO  Astro City";
+    src: url(fonts/MTO_Astro_City.ttf) format("truetype");
+}
 .table{
     position: relative;
     margin: auto;

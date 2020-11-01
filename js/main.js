@@ -105,7 +105,7 @@ window.onload = playSong;
 function playSong(){
     song.src = playingSong;
     song.volume=0.2;
-    //song.play();
+    song.play();
     if (!song.paused==true){ 
         play_btn.innerHTML="||"
     }
