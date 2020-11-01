@@ -70,7 +70,7 @@ function note_toggle(){
         note.style.left="50%";
         note.style.transform="translate(-50%, -50%) scale(3)";
 
-        noteContent.style.transform="rotatex(180deg)";
+        noteContent.style.transform="rotateY(180deg)";
 
         stickers.classList.add("sticker-active");
     }

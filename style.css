@@ -318,6 +318,7 @@ body *{
     height: 65px;
 }
 #note>.content>.back{ 
+    transform: rotateY(180deg);
     display: flex;
     justify-content: center;
     align-items: center;
