@@ -15,7 +15,8 @@ function card_toggle(){
         card.style.top="20%";
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
-
+        
+        shadow.style.position="absolute";
         shadow.style.zIndex="99";
         shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
         shadow.style.opacity="100%";
@@ -23,7 +24,7 @@ function card_toggle(){
         cardCover.style.transform="rotatex(180deg)";
 
         //Enable scrolling
-        document.body.style.overflow="auto";
+        document.body.style.overflowY="auto";
     }
     else{ 
         shadow.style.opacity="";
@@ -31,6 +32,7 @@ function card_toggle(){
         shadow.style.position="";
         shadow.style.height="";
         shadow.style.zIndex="";
+        shadow.style.position="fixed";
 
         card.style.height="300px";
         card.style.top="";
@@ -45,7 +47,7 @@ function card_toggle(){
         },500);
         
         //Disable scrolling
-        document.body.style.overflow="hidden";
+        document.body.style.overflowY="hidden";
         
     }
     /* TOGGLE OBJECT's SHADOW*/
