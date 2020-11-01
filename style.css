@@ -6,6 +6,23 @@
     max-width: 1000px;
     min-width: inherit;
 }
+.preload *{ 
+    transition: none;
+}
+#inner-shadow{ 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
+}
+#shadow{ 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+    background-color: rgba(0,0,0,0.75);
+    transition-duration: .25s;
+}
 html, body{ 
     width: 100%;
     height: 100%;
@@ -15,8 +32,9 @@ body{
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-image: url(images/background.jpg);
-    font-family: "UTM Avo";
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url(images/table5.png);
     padding: 0;
     margin: 0;
 }
@@ -24,137 +42,248 @@ body *{
     outline: none;
     transition-duration: .5s;
 }
-.card-cover{
-    background-image: url(images/card-background.jpg);
-    width: 100%;
-    height: 100%;
-}
-.card-cover::before{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.card{
-    background-image: url("images/modal/background.jpg");
-    z-index: 12;
-    cursor: pointer;
+#card{ 
+    font-family: "UTM Avo";
     width: 500px;
     height: 300px;
-    background-color: white;
-    transform: rotate(10deg);
     position: relative;
-    top: 320px;
+    top: 100px;
     left: 40%;
     perspective: 2000px;
 }
-.card>.card-cover{ 
+#card.low-shadow{ 
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, .25)
+}
+#card>.card-cover{ 
     position: absolute;
     width: 100%;
-    height: 100%;
-    top:0;
+    height: 300px;
+    bottom: 0%;
     left:0;
     display: flex;
+    z-index: 10;
     justify-content: center;
     align-items: center;
+    transform: rotateX(20deg);
     transform-origin: top;
     transform-style: preserve-3d;
 }
-.table>div, 
-.table>img{ 
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
-}
-.pencil{ 
+.front, .back{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
-    bottom: 25%;
-    z-index: 12;
-    left: 20%;
-    width: 500px;
-    transform: rotate(40deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
 }
-.card:hover ~  .pencil{
-    bottom: 10%;
-    left: 20%;
+.back{
+    transform: rotateX(180deg);
+}
+#card.hover{
+    transform: rotate(10deg);
+}
+#card.hover:hover{
+    transform: rotate(5deg);
+    cursor: pointer;
+}
+.card-cover>.front{ 
+    background-image: url(images/card-background.png);
+}
+.card-cover>.back{ 
+    background-image: url(images/modal/background.jpg);
+    
+}
+#card>.content{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(images/modal/background.jpg);
+}
+.low-shadow{
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
+}
+.normal-shadow{
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, .25));
+}
+#pencil{ 
+    position: absolute;
+    bottom: 35px;
+    z-index: 10;
+    left: 200px;
+    width: 500px;
     transform: rotate(20deg);
 }
-
-.card:hover{
-    box-shadow: 0 0 20px #ffe6a0;
-    transform: rotate(5deg);
+#card.hover:hover ~  #pencil{
+    bottom: 20px;
+    left: 20%;
+    transform: rotate(10deg);
 }
-.card:hover>.card-cover{
-    transform:  rotateX(40deg);
+#card.hover:hover>.card-cover{
+    transform:  rotateX(50deg);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
 }
-
-.card:active>.card-cover{
-    transform: rotateX(180deg) rotate(0deg);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
-}
-
-
-.card:active ~ .pencil  {
-    z-index: 10;
-}
-
-
-
-.laptop{ 
+#laptop{ 
     position: absolute;
     width: 900px;
     transform: rotate(-10deg);
-    z-index: 10;
-    top: -35%;
-    left: -15%;
+    z-index: 11;
+    top: -270px;
+    left: -120px;
 }
-
-.eraser{ 
+#eraser{ 
     position: absolute;
     top: 40%;
     width: 100px;
-    right: 50px;
+    right: 60px;
     transform: rotate(30deg);
 }
-.card:hover ~ .eraser{ 
-    right: 5%;
-    top: 32%;
+#coffee_cup{ 
+    position: absolute;
+    bottom: 50px;
+    left: -250px;
+    width: 30%;
+    transform: rotate(120deg);
+}
+#coffee_cup.heavy-shadow{ 
+    filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25))
+}
+#card.hover:hover ~ #eraser{ 
+    right: 62px;
+    top: 34%;
     transform: rotate(50deg);
+}
+/* MUSIC PLAYER */
+
+#musicPlayer{
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+    height: 225px;
+    top: 10%;
+    left: 100%;
+    transform: rotate(-10deg);
+}
+#musicPlayer>img{ 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.ipod-screen{
+    width: calc(100% - 26px);
+    height: calc(50% - 26px);
+    top: 0;
+    position: relative;
+    left: 0;
+    padding: 13px;
+    z-index: -1;
+}
+.ipod-bg{
+    width: 100%;
+    height: 100%;
+    background-color: white ;
+    z-index: -1;
+}
+.bar  { 
+    position: relative;
+    width: 100%;
+    height: 5px;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.statusBar{
+    width: inherit;
+    position: absolute;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
+    height: 12px;
+    top: 12px;
+}
+.statusBar>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#songTitle{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 45%;
+    text-align: center;
+}
+#play_btn{
+    border: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: lightgray;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 15%;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+#seekBar{
+    width: 80%;
+    height: 100%;
+    background-color: gray;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    overflow: hidden;   
+}
+#fill{
+    width: 0px;
+    height: 5px;
+    background-color:#353535;
 }
 
 /* =========================================== =========== ========================================================= */
 /* =========================================== CREDIT NOTE ========================================================= */
-.note{
-    text-decoration: none;
+#note{
     font-family: "MTO  Astro City";
-    cursor: pointer;
     width: 150px;
     height: 150px;
-    background-color: #ffff8d;
-    transform: rotate(-20deg);
     position: absolute;
-    top: 40%;
-    left: 10%;
+}
+#note>.content{
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    background-color: #ffff8d;
+}
+#note>.content>.front{
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#note>.content>.back{ 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    font-weight: bold;
+    overflow: hidden;
 }
-
-.note:hover{
-    box-shadow: 0 0 20px #ffe6a0;
-    top: 55%;
+#note.hover:hover{
+    top: 45%;
     transform: rotate(-10deg);
+    cursor: pointer;
 }
-
-.note:active{
-    transform: scale(1.5);
+#note.hover{ 
+    transform: rotate(-20deg);
+    top: 40%;
+    left: 10%;
 }
 
 
@@ -162,113 +291,129 @@ body *{
 /* ============================================= THE LETTER MODAL =================================================== */
 .modal {
     display: none;
-    position: fixed;
-    z-index: 12;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    position: absolute;
+    opacity: 0;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 300px;
+    transform: translate(-50%, -50%) scale(2);
+    overflow: hidden;
+    background-color: transparent;
 }
+.modal>.close-btn{ 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 
 /* Modal Content/Box */
 .modal-box {
-    background: transparent;
+    background-image: url("images/modal/background.jpg");
     margin: 5% auto;
     padding: 20px;
-    width: 60%;
+    border: 1px solid #888;
+    width: 80%;
 }
-
 .modal_close_button{
     position: absolute;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
 }
-
 .modal_close_button:hover{
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
 }
-
 .right_modal_close_btn{
-    margin-right: 20px;
-    margin-top: 10px;
+    margin-right: 50px;
     float: right;
 }
-
 .modal-content{
     margin-top: 40px;
 }
-
 .modal_letter_header{
     margin: 5px;
     font-weight: bold;
     font-size: 40px;
     text-align: center;
 }
-
 .modal_letter_second_header{
     margin: 5px;
     font-weight: bold;
     font-size: 30px;
     text-align: center;
 }
-
 .title_modal_letter{
     margin: 5px;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
 }
-
 .modal_text{
     font-size: 20px;
 }
-
-#letter_modal{
-    transition-delay: 1s;
+.user-info{ 
+    position: relative;
 }
-/* ================================================================================================================== */
-/* ============================================= THE CREATED MODAL =================================================== */
-
-/* Modal Content/Box */
-.modal-create-box {
+.user-info{
     position: absolute;
-    left: 40%;
-    top: 15%;
-    background-color: #ffffb0;
-    margin: 5% auto;
-    padding: 0 20px 30px 20px;
-    border: 1px solid #888;
-    width: 20%;
+    top: 0;
+    left: 0
 }
-
-.created_text{
-    font-size: 20px;
-    padding-left: 10px;
-    font-family: Georgia;
+.user{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20%;
+    font-size: 10px;
+    padding: 5px;
 }
-
-#laptop_image_create{
-    width: 80px;
-    height: 80px;
+.user>.avatar{ 
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+#sv-518h0584>.avatar{ 
+    background-image: url(images/avatar/518h0584.jpg);
+}
+#sv-518h0076>.avatar{ 
+    background-image: url(images/avatar/518h0076.jpg);
+}
+#sv-518h0044>.avatar{ 
+    background-image: url(images/avatar/518h0044.jpg);
+}
+.sticker{ 
+    width: 200%;
+    height: 200%;
+    position: relative;
+}
+.sticker>img{ 
     position: absolute;
-    right: 20px;
-    top: 40px;
+}
+.sticker>img:nth-child(1){ 
+    width: 50px;
+    bottom: -10px;
+    left: -10px;
     transform: rotate(20deg);
+    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
-
-
-
-/* ================================================================================================================== */
-/* ============================================= AUDIO =================================================== */
-
-audio{ 
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 9999;
-    outline: none;
+.sticker>img:nth-child(2){ 
+    width: 40px;
+    bottom: -10px;
+    right: -10px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
-
+.sticker-active{ 
+    width: 100%;
+    height: 100%;
+    transition-delay: .25s;
+}

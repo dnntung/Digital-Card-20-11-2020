@@ -3,93 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>20/11/2020...</title>
 </head>
-<body>
+<body class="preload">
     <header>
-        <audio id="audio" controls autoplay>
-            <source src="audio/first_date.mp3" type="audio/mp3">
-        </audio>
+
     </header>
-<!--    <div class="ipod">-->
-<!--        <img src="images/ipod-png-11552939306xqxq1zi97y.png" alt="">-->
-<!--    </div>-->
+    <div id="inner-shadow"></div>
+    <div id="shadow"></div>
     <div class="table">
-        <div class="card" id="card_letter" onmouseup="card()">
-            <div class="card-cover" id="card_cover_letter">
-                <h1 id="card-text-header">Thiệp 20/11</h1>
-            </div>
-            <div class="card-content">
+        <div id="musicPlayer" class="low-shadow">
+            <img src="images/ipod.png" alt="ipod">
+            <button id="play_btn" onclick="playOrPause()">&#9658;</button>
+            <div class="ipod-screen">
+                <div class="ipod-bg"></div>
+                <div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
+                <div class="bar">
+                    <div id="seekBar">
+                        <div id="fill"></div>
+                    </div>
+                </div>
                 
+            </div>
+            
+        </div>
+        <div class="low-shadow hover" id="card" onclick="card_toggle()">
+            <div class="card-cover">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+            <div class="content">
             </div>            
         </div>
-        <img class="eraser" src="images/eraser.png">
-        <img id="pencil" class="pencil" src="images/pencil.png">
-        <img class="laptop" src="images/lt.png">
-        <a onmouseover="noteHover()" onmouseout="noteOutHover()" class="note" data-toggle="modal" href="#created_modal" id="created_note">
-            <div class="note-content">
-                Created by
-            </div>
-        </a>
-    </div>
-
-    <!-- =========================================================================================================== -->
-    <!-- =========================================== THE LETTER MODAL ============================================== -->
-
-    <div id="letter_modal" class="modal">
-
-        <!-- =========================================================================================================== -->
-        <!-- =================================== THE LETTER MODAL CONTENT ============================================== -->
-        <div class="modal-box" >
-            <div class="right_modal_close_btn">
-                <img id="modal_close_btn" class="modal_close_button" src="images/modal/close-bt.png" alt="" onclick="closeLetter();clearInterval(id);">
-            </div>
-
-            <div class="modal-content">
-                <p class="modal_letter_header">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
-                <p class="modal_letter_second_header">ĐỘC LẬP - TỰ DO - HẠNH PHÚC</p>
-                <p class="title_modal_letter">ĐƠN XIN CHÚC MỪNG NGÀY NHÀ GIÁO VIỆT NAM</p>
-                <p class="modal_text">Hôm nay 20/11, em cùng với các bạn nhóm em làm đơn này xin được phép chúc mừng thầy cô 20/11 vui vẻ</p>
-                <p class="modal_text">Tiền vô như nước</p>
-                <p class="modal_text">Trẻ mãi không già, OLD BUT GOLD</p>
-                <p class="modal_text">Vạn sự như ý</p>
-                <p class="modal_text">An khang thịnh vượng, Happy Birthday</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- =========================================================================================================== -->
-    <!-- =========================================== THE CREATED MODAL ============================================== -->
-
-    <div id="created_modal" class="modal">
-
-        <!-- =========================================================================================================== -->
-        <!-- =================================== THE CREATED MODAL CONTENT ============================================== -->
-        <div class="modal-create-box">
-            <div class="right_modal_close_btn">
-                <img id="created_modal_closeBtn" class="modal_close_button" src="images/modal/close-bt.png" alt="">
-            </div>
-
-            <div class="modal-create-content">
-                <br>
-                <img id="laptop_image_create" src="images/laptop-drawing.png" alt="">
-                <hr>
-                <p class="created_text">Thi Ngọc Phú</p>
-                <hr>
-                <p class="created_text">Nguyễn Khánh Vinh</p>
-                <hr>
-                <p class="created_text">Đinh Nguyễn Nhật Tùng</p>
-                <hr>
+        <img id="coffee_cup" class="heavy-shadow" src="images/coffee-cup.png"> 
+        <img id="eraser" class= "normal-shadow" src="images/eraser.png">
+        <img id="pencil" class="low-shadow" src="images/pencil.png">
+        <img id="laptop" class="normal-shadow" src="images/lt.png">
+        <div id="note" class="low-shadow hover" onclick="note_toggle()">
+            <div class="content">
+                <div class="front">
+                    <div>Created by</div>
+                </div>
+                <div class="back">
+                    <div class="sticker">
+                        <img src="images/sticker/klee.png">
+                        <img src="images/sticker/diluc.png">
+                    </div>
+                    <div class="user-info">
+                        <div id="sv-518h0584" class="user">
+                            <div class="avatar"></div>
+                            <span>Đinh Nguyễn Nhật Tùng</span>
+                        </div>
+                        <div id="sv-518h0076" class="user">
+                            <div class="avatar"></div>
+                            <span>Nguyễn Khánh Vinh</span>
+                        </div>
+                        <div id="sv-518h0044" class="user">
+                            <div class="avatar"></div>
+                            <span>Thi Ngọc Phú</span>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-
     </div>
+<footer 
+    style="position: fixed; bottom: 20px; right: 0; 
+    display: flex; justify-content: flex-end;
+    width: 100%; align-items: center;">
+    <div style="text-align: right;
+    line-height: 1.25; font-weight: bold;
+    font-size: 18px;">
+        <span id="icon-name" style="display: block;">18H50201</span>
+        <span style="display: block;">Digital_Joy</span>
+    </div>
+    <img style="width: 120px;
+    height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
 
-</body>
-
-<footer>
-    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/main.js"></script> 
 </footer>
+</body>
 </html>

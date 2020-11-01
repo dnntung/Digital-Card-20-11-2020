@@ -1,93 +1,130 @@
-var audio=document.getElementById("audio");
-audio.play();
-audio.volume=0.5;
+/*PREVENT PRE-ANIMATING OF ELEMENTS */
+window.onload=document.body.classList.remove("preload");
 
-// Get the modal
-const letter_modal = document.getElementById("letter_modal");
-const created_modal = document.getElementById("created_modal");
+/*CARD DISPLAY*/
+function card_toggle(){
+    var cardCover=card.getElementsByClassName("card-cover")[0];
+    var cardContent=card.getElementsByClassName("content")[0];
+    /*ADD/REMOVE HOVER EFFECT*/
+    card.classList.toggle("hover");
 
-// Close modal
-const btnCloseLetterModal = document.getElementById("modal_close_btn");
-const btnCloseCreatedModal = document.getElementById("created_modal_closeBtn");
+    if (card.style.zIndex!="100"){
+        card.style.zIndex="100";
+        card.style.height="600px";
+        card.style.transformOrigin="top";
+        card.style.top="20%";
+        card.style.left="50%";
+        card.style.transform="translate(-50%, -50%) scale(2)";
+        
+        shadow.style.position="absolute";
+        shadow.style.zIndex="99";
+        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
+        shadow.style.opacity="100%";
+        
+        cardCover.style.transform="rotatex(180deg)";
 
-// Get the button that opens the modal
-const btnLetterModal = document.getElementById("card_letter");
-const btnLetterCoverModal = document.getElementById("card_cover_letter");
-const btnCreatemodal = document.getElementById("created_note");
+        //Enable scrolling
+        document.body.style.overflowY="auto";
+    }
+    else{ 
+        shadow.style.opacity="";
+        shadow.style.backgroundColor="";
+        shadow.style.position="";
+        shadow.style.height="";
+        shadow.style.zIndex="";
+        shadow.style.position="fixed";
 
-// Card text header, pencil
-const cardtext = document.getElementById("card-text-header");
-const pencil = document.getElementById("pencil");
+        card.style.height="300px";
+        card.style.top="";
+        card.style.left="";
+        card.style.transform="";
+        card.style.transformOrigin="";
 
+        cardCover.style.transform="";
 
-
-// =============================================== NOTE PART =============================================== //
-    // Display the note modal
-btnCreatemodal.onclick = function() {
-    created_modal.style.display = "block";
-    btnCreatemodal.style.display = "none";
+        setTimeout(function(){
+            card.style.zIndex="";
+        },500);
+        
+        //Disable scrolling
+        document.body.style.overflowY="hidden";
+        
+    }
+    /* TOGGLE OBJECT's SHADOW*/
+    card.classList.toggle("low-shadow");
 }
 
-function closeNote() {
-    btnCloseCreatedModal.onclick = function () {
-        created_modal.style.display = "none";
-        btnCreatemodal.style.display = "flex";
-        btnCreatemodal.style.top = "55%";
+/*NOTE DISPLAY*/
+function note_toggle(){ 
+    var noteContent=note.getElementsByClassName("content")[0];
+    var stickers=note.getElementsByClassName("sticker")[0];
+    note.classList.toggle("hover");
+
+    if (note.style.zIndex!="100"){
+        shadow.style.zIndex="99";
+        shadow.style.opacity="100%";
+
+        note.style.zIndex="100";
+        note.style.transformOrigin="center";
+        note.style.top="50%";
+        note.style.left="50%";
+        note.style.transform="translate(-50%, -50%) scale(3)";
+
+        noteContent.style.transform="rotatex(180deg)";  
+        
+        stickers.classList.add("sticker-active");
+    }
+    else{   
+        stickers.classList.remove("sticker-active");
+
+        note.style.top="";
+        note.style.left="";
+        note.style.transform="";
+        noteContent.style.transform="";
+        note.style.transformOrigin="";
+        
+        setTimeout(function(){
+            note.style.zIndex="";
+        },300);
+        
+        shadow.style.zIndex="";
+        shadow.style.opacity="";
+    }
+    /* TOGGLE OBJECT's SHADOW*/
+    note.classList.toggle("low-shadow");
+    
+}
+
+/*MUSIC PLAYER*/
+var playingSong="audio/first_date.mp3";
+var barFill = document.getElementById("fill");
+var song = new Audio();
+
+window.onload = playSong;
+
+function playSong(){
+    song.src = playingSong;
+    song.volume=0.2;
+    //song.play();
+    if (!song.paused==true){ 
+        play_btn.innerHTML="||"
     }
 }
 
-
-function noteHover() {
-    btnCreatemodal.style.top = "55%";
-    closeNote()
-}
-
-function noteOutHover() {
-    btnCreatemodal.style.top = "40%";
-    btnLetterCoverModal.style.transform = "rotateX(0deg)";
-}
-
-// =============================================== CARD PART =============================================== //
-function showCardContent() {
-        letter_modal.style.display = "block";
-}
-
-
-    // Display the card modal if click
-function letterOpen() {
-    btnLetterModal.style.transform = "rotate(0deg) scale(2.0)";
-    btnLetterModal.style.top = "110%";
-    btnLetterModal.style.left = "25%";
-    btnLetterCoverModal.style.transform = "rotateX(180deg)";
-    btnLetterCoverModal.style.backgroundImage = 'url("images/modal/background.jpg")';
-
-    // Hide pencil and text from table
-    cardtext.style.display = "none";
-    pencil.style.display = "none";
-}
-
-function closeLetter() {
-    btnCloseLetterModal.onclick = function() {
-        letter_modal.style.display = "none";
-        btnLetterModal.style.transform = "rotate(10deg) scale(1.0)";
-        btnLetterModal.style.top = "320px";
-        btnLetterModal.style.left = "40%";
-        btnLetterCoverModal.style.transform = "rotateX(0deg)";
-        btnLetterCoverModal.style.backgroundImage =  'url(images/card-background.jpg)';
-        cardtext.style.display = "block";
-        pencil.style.display = "block";
+function playOrPause(){
+    if(song.paused){
+        play_btn.innerHTML="||"
+        song.play();
+    } else{
+        play_btn.innerHTML="&#9658;"
+        song.pause();
     }
 }
 
-function card() {
-    console.log(1);
-    letterOpen();
-    const id = setTimeout(showCardContent,500);
-}
-
-
-
-
-// Call function
-
-
+song.addEventListener('timeupdate',function(){
+    var position = song.currentTime / song.duration;
+    barFill.style.width = position * 100 + '%';
+    if (position==1){ 
+        play_btn.innerHTML="&#9658;";
+    }
+});
