@@ -56,8 +56,8 @@ function card_toggle(){
 
 /*NOTE DISPLAY*/
 function note_toggle(){ 
-    var noteContent=note.getElementsByClassName("content")[0];
-    var stickers=note.getElementsByClassName("sticker")[0];
+    var noteContent = note.getElementsByClassName("content")[0];
+    var stickers = note.getElementsByClassName("sticker")[0];
     note.classList.toggle("hover");
 
     if (note.style.zIndex!="100"){
@@ -70,8 +70,8 @@ function note_toggle(){
         note.style.left="50%";
         note.style.transform="translate(-50%, -50%) scale(3)";
 
-        noteContent.style.transform="rotatex(180deg)";  
-        
+        noteContent.style.transform="rotatex(180deg)";
+
         stickers.classList.add("sticker-active");
     }
     else{   
