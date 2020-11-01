@@ -419,17 +419,10 @@ body *{
 }
 
 .content-text{
-    font-family: "Calibri";
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-#rose-footer{
-    height: 50px;
-    width: 80px;
-    position: absolute;
-    right: 65%;
-    opacity: 0.9;
+    font-family: "UTM Avo";
+    padding-left: 12%;
+    padding-right: 12%;
+    font-size: 17px;
 }
 
 #rose-right{
@@ -466,3 +459,42 @@ body *{
     opacity: 0.3;
     transform: rotate(90deg);
 }
+
+.back-content-text{
+    font-family: "Calibri";
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.back-text-header{
+    font-size: 24px;
+}
+
+.back-text-second{
+    position: absolute;
+    top: 20%;
+    font-size: 18px;
+    padding-left: 10%;
+}
+
+.back-text-third{
+    position: absolute;
+    top: 40%;
+    font-size: 18px;
+    padding-left: 50%;
+}
+
+.back-text-fourth{
+    position: absolute;
+    top: 60%;
+    font-size: 18px;
+    padding-left: 10%;
+}
+
+.back-text-fifth{
+    position: absolute;
+    top: 80%;
+    font-size: 18px;
+    padding-left: 20%;
+}
+
