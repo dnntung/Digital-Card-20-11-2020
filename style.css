@@ -417,3 +417,52 @@ body *{
     height: 100%;
     transition-delay: .25s;
 }
+
+.content-text{
+    font-family: "Calibri";
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#rose-footer{
+    height: 50px;
+    width: 80px;
+    position: absolute;
+    right: 65%;
+    opacity: 0.9;
+}
+
+#rose-right{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    opacity: 0.3;
+    right: -6%;
+    bottom: 0;
+    top: 0;
+}
+
+.rose-head-text{
+    width: 18px;
+    height: 15px;
+}
+
+#rose-corner-left{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -2%;
+    left: -3%;
+    opacity: 0.3;
+    transform: rotate(270deg);
+}
+
+#rose-corner-right{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -2%;
+    right: -3%;
+    opacity: 0.3;
+    transform: rotate(90deg);
+}
