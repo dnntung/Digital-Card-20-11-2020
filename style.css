@@ -97,6 +97,9 @@ body *{
     background-image: url(images/card-background.png);
 }
 .card-cover>.back{ 
+    color: #ffdf00;
+    padding: 30px 50px;
+    box-sizing: border-box;
     background-image: url(images/background-2.png);
     
 }
@@ -488,42 +491,54 @@ body *{
     opacity: 0.3;
     transform: rotate(90deg);
 }
-
-.back-content-text{
-    color: #ffdf00;
-    font-family: "Calibri";
-    padding-left: 5%;
-    padding-right: 5%;
+.area{ 
+    display: flex;
+    font-size: 12px;
+    width: 100%;
+    
+    position: relative;
+    overflow: hidden;
+    font-family: "UTM Androgyne";
+    color:#ffdf00;
+    padding: 5px;
+    margin: 0;
 }
-
-.back-text-header{
-    font-size: 24px;
+.area:nth-child(1){ 
+    display: block;
+    text-align: center;
+    font-size: unset;
 }
-
-.back-text-second{
-    position: absolute;
-    top: 20%;
-    font-size: 18px;
-    padding-left: 10%;
+.area:nth-child(3){ 
+    
+    
+    left: 0px;
+    
+    height: 80px;
+    padding-right: 50px;
 }
-
-.back-text-third{
-    position: absolute;
-    top: 40%;
-    font-size: 18px;
-    padding-left: 50%;
+.area:nth-child(3)>.text{ 
+    width: 30%;
 }
-
-.back-text-fourth{
-    position: absolute;
-    top: 60%;
-    font-size: 18px;
-    padding-left: 10%;
+.area:nth-child(3)>.img{ 
+    width: 70%;
+    height: 100%;
+    background-image: url(images/teacher/teacher1.png);
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
 }
-
-.back-text-fifth{
-    position: absolute;
-    top: 80%;
-    font-size: 18px;
-    padding-left: 20%;
+.area:nth-child(4){ 
+    left: 0px;
+    height: 90px;
+}
+.area:nth-child(4)>.text{ 
+    width: 30%;
+}
+.area:nth-child(4)>.img{ 
+    width: 70%;
+    height: 100%;
+    background-image: url(images/teacher/teachers.png);
+    background-size: cover;
+    background-position: top;
+    margin-right: 10px;
 }
