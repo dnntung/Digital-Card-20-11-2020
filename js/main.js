@@ -12,13 +12,11 @@ function card_toggle(){
         card.style.zIndex="100";
         card.style.height="600px";
         card.style.transformOrigin="top";
-        card.style.top="20%";
+        card.style.top="8%";
         card.style.left="50%";
         card.style.transform="translate(-50%, -50%) scale(2)";
         
-        shadow.style.position="absolute";
         shadow.style.zIndex="99";
-        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
         shadow.style.opacity="100%";
         
         cardCover.style.transform="rotatex(180deg)";

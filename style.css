@@ -6,6 +6,7 @@
     font-family: "MTO  Astro City";
     src: url(fonts/MTO_Astro_City.ttf) format("truetype");
 }
+
 .table{
     position: relative;
     margin: auto;
@@ -38,10 +39,8 @@ html, body{
 }
 body{
     overflow: hidden;
-    display: flex;
-    justify-content: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     background-image: url(images/table12.png);
     padding: 0;
     margin: 0;
@@ -107,40 +106,40 @@ body *{
     background-image: url(images/background-1.png);
     
 }
-.card-cover>.back>.object{ 
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+.card-object>.container>img{ 
+    position: absolute;
     filter: drop-shadow(0 0 3px #ffdf00);
 }
-.card-cover>.back>.object>img{ 
-    position: absolute;
-}
-.card-cover>.back>.object>img:nth-child(1){ 
+.card-cover>.back>.card-object>.container>img:nth-child(1){ 
     height: 100px;
     top: -1rem;
     left: -2rem;
 }
-.card-cover>.back>.object>img:nth-child(2){ 
+.card-cover>.back>.card-object>.container>img:nth-child(2){ 
     height: 30px;
     right: 2rem;
     top: 0rem;
 }
-.card-cover>.back>.object>img:nth-child(3){ 
+.card-cover>.back>.card-object>.container>img:nth-child(3){ 
     height: 60px;
     right: -1rem;
     top: 1rem;
+}
+
+.content{ 
+    font-size: 1rem;
 }
 .card-cover>.back>.content{ 
     position: absolute;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     top: 0;
     left: 0;
     padding: 30px 50px;
 }
-#card>.content{
+.card-content{
     color: #ffdf00;
     display: flex;
     align-items: center;
@@ -156,34 +155,37 @@ body *{
     background-position: bottom;
     background-image: url(images/background-1.png);
 }
-#card>.content>.object{ 
+.card-object{ 
     position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.card-object>.container{ 
     overflow: hidden;
+    position: relative;
     width: 100%;
     height: 100%;
 }
-#card>.content>.object>img{ 
-    position: absolute;
+.card-content>.card-object>.container>img{ 
     height: 120px;
     right: -2rem;
     bottom: -2rem;
     
 }
-#card>.content>div:nth-child(2){ 
+.card-content>.content{ 
     display: block;
     position: relative;
     padding: 30px 50px;
     
 }
-#card>.content>div:nth-child(2)>div>img{ 
+.card-content>.content>div:nth-child(1)>img{ 
     position: absolute;
     height: 30px;
     transform: rotate(10deg);
 }
-#card>.content>div>div{ 
-    margin: 5px 0px;
-}
-#card>.content>div:nth-child(3){ 
+.card-content>div:nth-child(3){ 
     position: absolute;
     bottom: 20px;
     right: 100px;
@@ -562,29 +564,27 @@ body *{
 }
 .area{ 
     display: flex;
-    font-size: 12px;
+    font-size: 0.8rem;
     width: 500px;
-    
     position: relative;
     overflow: hidden;
     font-family: "UTM Androgyne";
     color:#ffdf00;
     padding: 5px 0px;
-    margin-left: -50px ;
+    margin-left: -50px;
 }
 .area:nth-child(1){ 
     display: block;
     text-align: center;
-    font-size: unset;
+    font-size: 1rem;
 }
 .area:nth-child(2){ 
-    margin-left: 0px;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .area:nth-child(3){ 
-    
-    
     left: 0px;
-    
     height: 80px;
     padding-right: 50px;
 }
