@@ -89,8 +89,8 @@ function note_toggle(){
         
         setTimeout(function(){
             note.style.zIndex="";
-        },300);
-        
+        },100);
+
         shadow.style.zIndex="";
         shadow.style.opacity="";
     }
