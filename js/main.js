@@ -28,6 +28,16 @@ function card_toggle(){
         document.body.style.overflowY="auto";
     }
     else{ 
+        document.body.scrollTop=0;
+        document.documentElement.scrollTop=0;
+
+        cardCover.style.transform="";
+        card.style.height="300px";
+        card.style.top="";
+        card.style.left="";
+        card.style.transform="";
+        card.style.transformOrigin="";
+
         shadow.style.opacity="";
         shadow.style.backgroundColor="";
         shadow.style.position="";
@@ -35,14 +45,7 @@ function card_toggle(){
         shadow.style.zIndex="";
         shadow.style.position="fixed";
 
-        card.style.height="300px";
-        card.style.top="";
-        card.style.left="";
-        card.style.transform="";
-        card.style.transformOrigin="";
-
-        cardCover.style.transform="";
-
+        
         setTimeout(function(){
             card.style.zIndex="";
         },500);
