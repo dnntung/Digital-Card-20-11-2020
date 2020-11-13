@@ -1,6 +1,5 @@
 /*PREVENT PRE-ANIMATING OF ELEMENTS */
 window.onload=document.body.classList.remove("preload");
-
 /*CARD DISPLAY*/
 function card_toggle(){
     var cardCover=card.getElementsByClassName("card-cover")[0];
@@ -13,7 +12,11 @@ function card_toggle(){
         card.style.height="600px";
         card.style.transformOrigin="top";
         card.style.top="8%";
-        card.style.left="50%";
+        if (window.matchMedia("(max-width: 980px)").matches){ 
+            card.style.left="65%";
+        }else{ 
+            card.style.left="50%";
+        }
         card.style.transform="translate(-50%, -50%) scale(2)";
         
         shadow.style.zIndex="99";
