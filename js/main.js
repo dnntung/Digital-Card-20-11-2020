@@ -45,10 +45,7 @@ function card_toggle(){
         shadow.style.zIndex="";
         shadow.style.position="fixed";
 
-        
-        setTimeout(function(){
-            card.style.zIndex="";
-        },500);
+        card.style.zIndex=""
         
         //Disable scrolling
         document.body.style.overflowY="hidden";
