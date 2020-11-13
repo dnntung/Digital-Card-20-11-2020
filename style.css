@@ -286,7 +286,7 @@ body *{
     position: absolute;
     top: 25rem;
     left: -10rem;
-    width: 30%;
+    width: 20rem;
     -webkit-transform: rotate(120deg);
         -ms-transform: rotate(120deg);
             transform: rotate(120deg);
@@ -309,11 +309,9 @@ body *{
     overflow: hidden;
     width: 150px;
     height: 225px;
-    top: 10%;
-    left: 100%;
-    -webkit-transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    top: 5rem;
+    left: 60rem;
+    transform: rotate(-10deg);
 }
 #musicPlayer>img{ 
     width: 100%;
