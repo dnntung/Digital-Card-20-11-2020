@@ -1,6 +1,5 @@
 /*PREVENT PRE-ANIMATING OF ELEMENTS */
 window.onload=document.body.classList.remove("preload");
-
 /*CARD DISPLAY*/
 function card_toggle(){
     var cardCover=card.getElementsByClassName("card-cover")[0];
@@ -12,13 +11,15 @@ function card_toggle(){
         card.style.zIndex="100";
         card.style.height="600px";
         card.style.transformOrigin="top";
-        card.style.top="20%";
-        card.style.left="50%";
+        card.style.top="8%";
+        if (window.matchMedia("(max-width: 980px)").matches){ 
+            card.style.left="65%";
+        }else{ 
+            card.style.left="50%";
+        }
         card.style.transform="translate(-50%, -50%) scale(2)";
         
-        shadow.style.position="absolute";
         shadow.style.zIndex="99";
-        shadow.style.height="calc("+(600*2)+"px + "+card.style.top+")";
         shadow.style.opacity="100%";
         
         cardCover.style.transform="rotatex(180deg)";
@@ -27,6 +28,16 @@ function card_toggle(){
         document.body.style.overflowY="auto";
     }
     else{ 
+        document.body.scrollTop=0;
+        document.documentElement.scrollTop=0;
+
+        cardCover.style.transform="";
+        card.style.height="300px";
+        card.style.top="";
+        card.style.left="";
+        card.style.transform="";
+        card.style.transformOrigin="";
+
         shadow.style.opacity="";
         shadow.style.backgroundColor="";
         shadow.style.position="";
@@ -34,14 +45,7 @@ function card_toggle(){
         shadow.style.zIndex="";
         shadow.style.position="fixed";
 
-        card.style.height="300px";
-        card.style.top="";
-        card.style.left="";
-        card.style.transform="";
-        card.style.transformOrigin="";
-
-        cardCover.style.transform="";
-
+        
         setTimeout(function(){
             card.style.zIndex="";
         },500);
@@ -70,7 +74,7 @@ function note_toggle(){
         note.style.left="50%";
         note.style.transform="translate(-50%, -50%) scale(3)";
 
-        noteContent.style.transform="rotatex(180deg)";
+        noteContent.style.transform="rotateY(180deg)";
 
         stickers.classList.add("sticker-active");
     }
@@ -105,7 +109,7 @@ window.onload = playSong;
 function playSong(){
     song.src = playingSong;
     song.volume=0.2;
-    //song.play();
+    song.play();
     if (!song.paused==true){ 
         play_btn.innerHTML="||"
     }

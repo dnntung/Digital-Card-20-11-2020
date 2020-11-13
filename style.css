@@ -1,7 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: "UTM Androgyne";
     src: url(fonts/UTM_Androgyne.ttf) format("truetype");
 }
+@font-face{ 
+    font-family: "MTO  Astro City";
+    src: url(fonts/MTO_Astro_City.ttf) format("truetype");
+}
+
 .table{
     position: relative;
     margin: auto;
@@ -11,13 +23,16 @@
     min-width: inherit;
 }
 .preload *{ 
+    -webkit-transition: none; 
+    -o-transition: none; 
     transition: none;
 }
 #inner-shadow{ 
     position: fixed;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
+    -webkit-box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
+            box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
 }
 #shadow{ 
     position: fixed;
@@ -25,38 +40,43 @@
     height: 100%;
     opacity: 0%;
     background-color: rgba(0,0,0,0.75);
-    transition-duration: .25s;
+    -webkit-transition-duration: .25s;
+         -o-transition-duration: .25s;
+            transition-duration: .25s;
 }
 html, body{ 
     width: 100%;
     height: 100%;
-    min-width: 800px;
 }
 body{
     overflow: hidden;
-    display: flex;
-    justify-content: center;
     background-repeat: no-repeat;
-    background-size: auto;
-    background-image: url(images/table5.png);
+    background-size: cover;
+    background-position: center;
+    background-image: url(images/table12.jpg);
     padding: 0;
     margin: 0;
 }
+@media only screen and (min-width: 980px) {
+    body {
+        background-size: auto;
+    }
+}
 body *{ 
     outline: none;
-    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
 }
 #card{ 
     font-family: "UTM Avo";
-    width: 500px;
+    width: 30rem;
     height: 300px;
     position: relative;
-    top: 100px;
-    left: 40%;
-    perspective: 2000px;
-}
-#card.low-shadow{ 
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, .25)
+    top: 12rem;
+    left: 25rem;
+    -webkit-perspective: 2000px;
+            perspective: 2000px;
 }
 #card>.card-cover{ 
     position: absolute;
@@ -64,13 +84,23 @@ body *{
     height: 300px;
     bottom: 0%;
     left:0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
-    transform: rotateX(20deg);
-    transform-origin: top;
-    transform-style: preserve-3d;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+    -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+            transform-origin: top;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 .front, .back{
     width: 100%;
@@ -81,114 +111,199 @@ body *{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 .back{
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
 }
 #card.hover{
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+            transform: rotate(10deg);
 }
 #card.hover:hover{
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
     cursor: pointer;
 }
 .card-cover>.front{ 
     background-image: url(images/card-background.png);
 }
+
 .card-cover>.back{ 
     color: #ffdf00;
-    padding: 30px 50px;
-    box-sizing: border-box;
-    background-image: url(images/background-2.png);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-image: url(images/background-1.png);
     
 }
-#card>.content{
+
+.card-object>.container>img{ 
+    position: absolute;
+    -webkit-filter: drop-shadow(0 0 3px #ffdf00);
+            filter: drop-shadow(0 0 3px #ffdf00);
+}
+.card-cover>.back>.card-object>.container>img:nth-child(1){ 
+    height: 100px;
+    top: -1rem;
+    left: -2rem;
+}
+.card-cover>.back>.card-object>.container>img:nth-child(2){ 
+    height: 30px;
+    right: 2rem;
+    top: 0rem;
+}
+.card-cover>.back>.card-object>.container>img:nth-child(3){ 
+    height: 60px;
+    right: -1rem;
+    top: 1rem;
+}
+
+.content{ 
+    font-size: 1rem;
+}
+.card-cover>.back>.content{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    top: 0;
+    left: 0;
+    padding: 30px 50px;
+}
+.card-content.normal-shadow{ 
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+}
+.card-content{
     color: #ffdf00;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-family: "UTM Androgyne";
     width: 100%;
     height: 300px;
-    box-sizing: border-box;
-    padding: 30px 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    
     position: absolute;
     bottom: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    background-image: url(images/background.png);
+    background-image: url(images/background-1.png);
 }
-#card>.content>div{ 
+.card-object{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.card-object>.container{ 
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card-content>.card-object>.container>img{ 
+    height: 120px;
+    right: -2rem;
+    bottom: -2rem;
+    
+}
+.card-content>.content{ 
     display: block;
     position: relative;
+    padding: 30px 50px;
+    
 }
-#card>.content>div:nth-child(1)>div>img{ 
+.card-content>.content>div:nth-child(1)>img{ 
     position: absolute;
     height: 30px;
-    left: 175px;
-    top: 70px;
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+            transform: rotate(10deg);
 }
-#card>.content>div>div{ 
-    margin: 5px 0px;
-}
-#card>.content>div:nth-child(2){ 
+.card-content>div:nth-child(3){ 
     position: absolute;
     bottom: 20px;
     right: 100px;
 }
 .low-shadow{
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .25));
+    -webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
+            filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
 }
 .normal-shadow{
-    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, .25));
+    -webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
+            filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
 }
 #pencil{ 
     position: absolute;
-    bottom: 35px;
+    top: 47rem;
     z-index: 10;
-    left: 200px;
+    left: 15rem;
     width: 500px;
+    -webkit-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
     transform: rotate(20deg);
 }
 #card.hover:hover ~  #pencil{
-    bottom: 20px;
-    left: 20%;
-    transform: rotate(10deg);
+    top: 52rem;
+    left: 10rem;
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(-5deg);
 }
 #card.hover:hover>.card-cover{
-    transform:  rotateX(35deg);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .25);
+    -webkit-transform:  rotateX(35deg);
+            transform:  rotateX(35deg);
+    -webkit-box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);    
+        box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);
 }
 #laptop{ 
     position: absolute;
-    width: 900px;
-    transform: rotate(-10deg);
+    width: 60rem;
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
     z-index: 11;
-    top: -270px;
-    left: -120px;
+    top: -15rem;
+    left: -5rem;
 }
 #eraser{ 
     position: absolute;
-    top: 40%;
-    width: 100px;
-    right: 60px;
+    top: 27rem;
+    width: 5rem;
+    left: 50rem;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
     transform: rotate(30deg);
 }
 #coffee_cup{ 
     position: absolute;
-    bottom: 50px;
-    left: -250px;
-    width: 30%;
-    transform: rotate(120deg);
+    top: 25rem;
+    left: -10rem;
+    width: 20rem;
+    -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
 }
 #coffee_cup.heavy-shadow{ 
-    filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25))
+    -webkit-filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25)); 
+            filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25))
 }
 #card.hover:hover ~ #eraser{ 
-    right: 62px;
-    top: 34%;
+    top: 25rem;
+    left: 55rem;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
     transform: rotate(50deg);
 }
 /* MUSIC PLAYER */
@@ -198,9 +313,9 @@ body *{
     overflow: hidden;
     width: 150px;
     height: 225px;
-    top: 10%;
-    left: 100%;
-    transform: rotate(-10deg);
+    top: 5rem;
+    left: 55rem;
+    transform: rotate(5deg);
 }
 #musicPlayer>img{ 
     width: 100%;
@@ -215,26 +330,39 @@ body *{
     left: 0;
     padding: 13px;
     z-index: -1;
-}
+}   
 .ipod-bg{
     width: 100%;
     height: 100%;
-    background-color: white ;
-    z-index: -1;
+    z-index: 1;
 }
+
+.ipod-bg>img{
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+}
+
 .bar  { 
     position: relative;
     width: 100%;
     height: 5px;
     top: -20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .statusBar{
     width: inherit;
     position: absolute;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
+            box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
     height: 12px;
     top: 12px;
 }
@@ -258,13 +386,16 @@ body *{
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: lightgray;
-    transform: translateX(-50%);
+    background-color: rgba(206,207,212, 0.75);
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     left: 50%;
     top: 15%;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+    z-index: 0;
 }
 #seekBar{
     width: 80%;
@@ -291,31 +422,64 @@ body *{
 }
 #note>.content{
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     width: 100%;
     height: 100%;
-    background-color: #ffff8d;
 }
 #note>.content>.front{
     text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #ffff8d;
+
+    -webkit-box-align: center;
+
+        -ms-flex-align: center;
+
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+#note>.content>.front>div{ 
+    text-align: center;
+}
+#note>.content>.front>div>div>img{
+    width: 50%;
+}
+#note>.content>.front>div>div:nth-child(1){ 
+    margin: 0;
+    height: 65px;
 }
 #note>.content>.back{ 
+    background-color: #ffff8d;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow: hidden;
 }
 #note.hover:hover{
-    top: 45%;
-    transform: rotate(-10deg);
+    top: 22rem;
+    -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
     cursor: pointer;
 }
 #note.hover{ 
-    transform: rotate(-20deg);
-    top: 40%;
-    left: 10%;
+    -ms-transform: rotate(-10deg); 
+        transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    top: 20rem;
+    left: 12rem;
 }
 
 
@@ -330,7 +494,9 @@ body *{
     top: 50%;
     width: 500px;
     height: 300px;
-    transform: translate(-50%, -50%) scale(2);
+    -ms-transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(2);
+    -webkit-transform: translate(-50%, -50%) scale(2);
     overflow: hidden;
     background-color: transparent;
 }
@@ -396,10 +562,17 @@ body *{
     left: 0
 }
 .user{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
-    align-items: center;
-    box-sizing: border-box;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 100%;
     height: 20%;
     font-size: 10px;
@@ -434,20 +607,28 @@ body *{
     width: 50px;
     bottom: -10px;
     left: -10px;
-    transform: rotate(20deg);
-    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
+    -webkit-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+    -webkit-filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
+            filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
 .sticker>img:nth-child(2){ 
     width: 40px;
     bottom: -10px;
     right: -10px;
-    transform: rotate(-20deg);
-    filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
+    -webkit-transform: rotate(-20deg);
+        -ms-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+    -webkit-filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
+            filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
 .sticker-active{ 
     width: 100%;
     height: 100%;
-    transition-delay: .25s;
+    -webkit-transition-delay: .25s;
+         -o-transition-delay: .25s;
+            transition-delay: .25s;
 }
 
 .content-text{
@@ -479,7 +660,9 @@ body *{
     top: -2%;
     left: -3%;
     opacity: 0.3;
-    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
 }
 
 #rose-corner-right{
@@ -489,34 +672,40 @@ body *{
     bottom: -2%;
     right: -3%;
     opacity: 0.3;
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
 }
 .area{ 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    font-size: 12px;
-    width: 100%;
-    
+    font-size: 0.8rem;
     position: relative;
+    width: 30rem;
     overflow: hidden;
     font-family: "UTM Androgyne";
     color:#ffdf00;
-    padding: 5px;
-    margin: 0;
+    padding: 5px 0px;
+    margin-left: -50px;
 }
 .area:nth-child(1){ 
     display: block;
     text-align: center;
-    font-size: unset;
+    font-size: 1rem;
+}
+.area:nth-child(2){ 
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .area:nth-child(3){ 
-    
-    
     left: 0px;
-    
     height: 80px;
     padding-right: 50px;
 }
 .area:nth-child(3)>.text{ 
+    padding-right: 50px;
     width: 30%;
 }
 .area:nth-child(3)>.img{ 
@@ -532,6 +721,7 @@ body *{
     height: 90px;
 }
 .area:nth-child(4)>.text{ 
+    padding-left: 50px;
     width: 30%;
 }
 .area:nth-child(4)>.img{ 
@@ -540,5 +730,5 @@ body *{
     background-image: url(images/teacher/teachers.png);
     background-size: cover;
     background-position: top;
-    margin-right: 10px;
+    margin-left: 5px;
 }
