@@ -390,6 +390,7 @@ body *{
     height: 35px;
     border-radius: 50%;
     background-color: rgba(206,207,212, 0.75);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
     -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
