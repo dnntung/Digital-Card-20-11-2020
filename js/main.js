@@ -62,6 +62,7 @@ function card_toggle(){
 function note_toggle(){ 
     var noteContent = note.getElementsByClassName("content")[0];
     var stickers = note.getElementsByClassName("sticker")[0];
+    var laptop = document.getElementById("laptop");
     note.classList.toggle("hover");
 
     if (note.style.zIndex!="100"){
@@ -80,16 +81,14 @@ function note_toggle(){
     }
     else{   
         stickers.classList.remove("sticker-active");
-
         note.style.top="";
         note.style.left="";
         note.style.transform="";
         noteContent.style.transform="";
         note.style.transformOrigin="";
-        
         setTimeout(function(){
             note.style.zIndex="";
-        },100);
+        },300);
 
         shadow.style.zIndex="";
         shadow.style.opacity="";
@@ -98,6 +97,21 @@ function note_toggle(){
     note.classList.toggle("low-shadow");
     
 }
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
 
 /*MUSIC PLAYER*/
 var playingSong="audio/first_date.mp3";
