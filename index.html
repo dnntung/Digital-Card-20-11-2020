@@ -1,162 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>20/11/2020...</title>
-</head>
-<body class="preload">
-    <header>
-
-    </header>
-    <div id="inner-shadow"></div>
-    <div id="shadow"></div>
-    <div class="table">
-        <div id="musicPlayer" class="normal-shadow">
-            <img src="images/ipod.png" alt="ipod">
-            <button id="play_btn" onclick="playOrPause()">&#9658;</button>
-            <div class="ipod-screen">
-                <div class="ipod-bg"></div>
-                <div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
-                <div class="bar">
-                    <div id="seekBar">
-                        <div id="fill"></div>
-                    </div>
-                </div>
-                
-            </div>
-            
-        </div>
-        <div class="hover" id="card" onclick="card_toggle()">
-            <div class="card-cover">
-                <div class="front"> 
-                </div>
-                <div class="back">
-                    <div class="card-object ">
-                        <div class="container">
-                            <img src="images/gold-rose.gif">
-                            <img src="images/gold-rose.gif">
-                            <img src="images/gold-rose.gif">
-                            
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="area">
-                            Kính gửi đến thầy cô,
-                        </div>
-                        <div class="area">
-                            Những người đã dạy chúng em bao bài học hay...  
-                        </div>
-                        <div class="area">
-                            <div class="img"></div> 
-                            <div class="text">
-                                ...khơi nguồn sáng tạo,
-                            </div>
-                        </div>
-                        
-                        <div class="area">
-                            <div class="text">
-                                Những người lái đò tần tảo đưa chúng em đến bến bờ tri thức.
-                            </div>
-                            <div class="img"></div> 
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="card-content normal-shadow">  
-                <div class="card-object">
-                    <div class="container">
-                        <img id="rose_leak" src="images/gold-rose.png">
-                        <img style="width: 30rem;
-                                    height: 5rem;
-                                    transform: rotate(0deg);
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0;"
-                                    src="images/paper_plane.gif" alt="">
-                    </div>
-                </div>
-                <div class="content">
-                    <div>
-                        <span style="display:inline-block; width: 10px;"></span>
-                        Chúng em xin gửi đến thầy cô những lời chúc tốt đẹp nhất.
-                        Mong thầy cô luôn giữ mãi ngọn lửa nhiệt huyết trong lòng,
-                        để mang đến những bài học bổ ích cho các thế hệ học sinh sau này.
-                        <img src="images/sticker/fire.gif">
-
-                    </div> 
-                    <div>
-                        <span style="display:inline-block; width: 10px;"></span>
-                        Cám ơn các thầy cô,
-                        vì đã mang đến cho chúng em những năm tháng học trò thật ý nghĩa !!!
-                    </div>
-                </div>
-                <div>From: digital_joy</div>
-                
-            </div>            
-        </div>
-
-        <div class="cofffe_cup_cover">
-        <img id="coffee_cup" class="heavy-shadow" src="images/coffee-cup.png"> 
-        <img id="cheems"src="images/cheemslatte.png" onclick="cheems_is_here();" >
-        </div>
-
-        <img id="eraser" class= "normal-shadow" src="images/eraser.png">
-        <img id="pencil" class="normal-shadow" src="images/pencil.png">
-        <img id="laptop" class="normal-shadow" src="images/lt.png">
-        <div id="note" class="low-shadow hover" onclick="note_toggle()">
-            <div class="content">
-                <div class="front">
-                    <div>
-                        <div>
-                            <img src="images/logo_tdtu.png">
-                        </div>
-                        <div>
-                            <strong>Created by</strong><br>
-                            <i>digital_joy</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="sticker">
-                        <img src="images/sticker/klee.png">
-                        <img src="images/sticker/diluc.png">
-                    </div>
-                    <div class="user-info">
-                        <div id="sv-518h0584" class="user">
-                            <div class="avatar"></div>
-                            <span>Đinh Nguyễn Nhật Tùng</span>
-                        </div>
-                        <div id="sv-518h0076" class="user">
-                            <div class="avatar"></div>
-                            <span>Nguyễn Khánh Vinh</span>
-                        </div>
-                        <div id="sv-518h0044" class="user">
-                            <div class="avatar"></div>
-                            <span>Thi Ngọc Phú</span>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-<footer 
-    style="position: fixed; bottom: 20px; right: 0; 
-    display: flex; justify-content: flex-end;
-    width: 100%; align-items: center;">
-    <div style="text-align: right;
-    line-height: 1.25; font-weight: bold;
-    font-size: 18px;">
-        <span id="icon-name" style="display: block;">18H50201</span>
-        <span style="display: block;">Digital_Joy</span>
-    </div>
-    <img style="width: 120px;
-    height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
-
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="js/main.js"></script> 
-</footer>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>20/11/2020...</title>
+	</head>
+	<body class="preload">
+		<header>
+		</header>
+		<div id="inner-shadow"></div>
+		<div id="shadow"></div>
+		<div class="table">
+			<div id="musicPlayer" class="normal-shadow">
+				<img src="images/ipod.png" alt="ipod">
+				<button id="play_btn" onclick="playOrPause()">&#9658;</button>
+				<div class="ipod-screen">
+					<div class="ipod-bg"></div>
+					<div class="statusBar"><img src="images/ipod_status_bar.png" alt="status bar"></div>
+					<div class="bar">
+						<div id="seekBar">
+							<div id="fill"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hover" id="card" onclick="card_toggle()">
+				<div class="card-cover">
+					<div class="front"> 
+					</div>
+					<div class="back">
+						<div class="card-object ">
+							<div class="container">
+								<img src="images/gold-rose.gif">
+								<img src="images/gold-rose.gif">
+								<img src="images/gold-rose.gif">
+							</div>
+						</div>
+						<div class="content">
+							<div class="area">
+								Kính gửi đến thầy cô,
+							</div>
+							<div class="area">
+								Những người đã dạy chúng em bao bài học hay...  
+							</div>
+							<div class="area">
+								<div class="img"></div>
+								<div class="text">
+									...khơi nguồn sáng tạo,
+								</div>
+							</div>
+							<div class="area">
+								<div class="text">
+									Những người lái đò tần tảo đưa chúng em đến bến bờ tri thức.
+								</div>
+								<div class="img"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-content normal-shadow">
+					<div class="card-object">
+						<div class="container">
+							<img id="rose_leak" src="images/gold-rose.png">
+							<img style="width: 30rem;
+								height: 5rem;
+								transform: rotate(0deg);
+								position: absolute;
+								top: 0;
+								right: 0;"
+								src="images/paper_plane.gif" alt="">
+						</div>
+					</div>
+					<div class="content">
+						<div>
+							<span style="display:inline-block; width: 10px;"></span>
+							Chúng em xin gửi đến thầy cô những lời chúc tốt đẹp nhất.
+							Mong thầy cô luôn giữ mãi ngọn lửa nhiệt huyết trong lòng,
+							để mang đến những bài học bổ ích cho các thế hệ học sinh sau này.
+							<img src="images/sticker/fire.gif">
+						</div>
+						<div>
+							<span style="display:inline-block; width: 10px;"></span>
+							Cám ơn các thầy cô,
+							vì đã mang đến cho chúng em những năm tháng học trò thật ý nghĩa !!!
+						</div>
+					</div>
+					<div>From: digital_joy</div>
+				</div>
+			</div>
+			<div class="cofffe_cup_cover">
+				<img id="coffee_cup" class="heavy-shadow" src="images/coffee-cup.png"> 
+				<img id="cheems"src="images/cheemslatte.png" onclick="cheems_is_here();" >
+			</div>
+			<img id="eraser" class= "normal-shadow" src="images/eraser.png">
+			<img id="pencil" class="normal-shadow" src="images/pencil.png">
+			<img id="laptop" class="normal-shadow" src="images/lt.png">
+			<div id="note" class="low-shadow hover" onclick="note_toggle()">
+				<div class="content">
+					<div class="front">
+						<div>
+							<div>
+								<img src="images/logo_tdtu.png">
+							</div>
+							<div>
+								<strong>Created by</strong><br>
+								<i>digital_joy</i>
+							</div>
+						</div>
+					</div>
+					<div class="back">
+						<div class="sticker">
+							<img src="images/sticker/klee.png">
+							<img src="images/sticker/diluc.png">
+						</div>
+						<div class="user-info">
+							<div id="sv-518h0584" class="user">
+								<div class="avatar"></div>
+								<span>Đinh Nguyễn Nhật Tùng</span>
+							</div>
+							<div id="sv-518h0076" class="user">
+								<div class="avatar"></div>
+								<span>Nguyễn Khánh Vinh</span>
+							</div>
+							<div id="sv-518h0044" class="user">
+								<div class="avatar"></div>
+								<span>Thi Ngọc Phú</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer 
+			style="position: fixed; bottom: 20px; right: 0; 
+			display: flex; justify-content: flex-end;
+			width: 100%; align-items: center;">
+			<div style="text-align: right;
+				line-height: 1.25; font-weight: bold;
+				font-size: 18px;">
+				<span id="icon-name" style="display: block;">18H50201</span>
+				<span style="display: block;">Digital_Joy</span>
+			</div>
+			<img style="width: 120px;
+				height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
+			<link rel="stylesheet" href="style.css">
+			<script type="text/javascript" src="js/main.js"></script> 
+		</footer>
+	</body>
 </html>

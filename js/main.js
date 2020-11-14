@@ -1,111 +1,111 @@
 /*PREVENT PRE-ANIMATING OF ELEMENTS */
-window.onload=document.body.classList.remove("preload");
+window.onload = document.body.classList.remove("preload");
 /*CARD DISPLAY*/
-function card_toggle(){
-    var cardCover=card.getElementsByClassName("card-cover")[0];
-    var cardContent=card.getElementsByClassName("content")[0];
+function card_toggle() {
+    var cardCover = card.getElementsByClassName("card-cover")[0];
+    var cardContent = card.getElementsByClassName("content")[0];
     /*ADD/REMOVE HOVER EFFECT*/
     card.classList.toggle("hover");
 
-    if (card.style.zIndex!="100"){
-        rose_leak.src="images/gold-rose.gif";
-        card.style.zIndex="100";
-        card.style.height="600px";
-        card.style.transformOrigin="top";
-        card.style.top="8%";
-        if (window.matchMedia("(max-width: 980px)").matches){ 
-            card.style.left="65%";
-        }else{ 
-            card.style.left="50%";
+    if (card.style.zIndex != "100") {
+        rose_leak.src = "images/gold-rose.gif";
+        card.style.zIndex = "100";
+        card.style.height = "600px";
+        card.style.transformOrigin = "top";
+        card.style.top = "8%";
+        if (window.matchMedia("(max-width: 980px)").matches) {
+            card.style.left = "65%";
+        } else {
+            card.style.left = "50%";
         }
-        card.style.transform="translate(-50%, -50%) scale(2)";
-        
-        shadow.style.zIndex="99";
-        shadow.style.opacity="100%";
-        
-        cardCover.style.transform="rotatex(180deg)";
+        card.style.transform = "translate(-50%, -50%) scale(2)";
+
+        shadow.style.zIndex = "99";
+        shadow.style.opacity = "100%";
+
+        cardCover.style.transform = "rotatex(180deg)";
 
         //Enable scrolling
-        document.body.style.overflowY="auto";
-    }
-    else{ 
-        rose_leak.src="images/gold-rose.png";
-        document.body.scrollTop=0;
-        document.documentElement.scrollTop=0;
+        document.body.style.overflowY = "auto";
+    } else {
+        rose_leak.src = "images/gold-rose.png";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
 
-        cardCover.style.transform="";
-        card.style.height="300px";
-        card.style.top="";
-        card.style.left="";
-        card.style.transform="";
-        card.style.transformOrigin="";
+        cardCover.style.transform = "";
+        card.style.height = "300px";
+        card.style.top = "";
+        card.style.left = "";
+        card.style.transform = "";
+        card.style.transformOrigin = "";
 
-        shadow.style.opacity="";
-        shadow.style.backgroundColor="";
-        shadow.style.position="";
-        shadow.style.height="";
-        shadow.style.zIndex="";
-        shadow.style.position="fixed";
+        shadow.style.opacity = "";
+        shadow.style.backgroundColor = "";
+        shadow.style.position = "";
+        shadow.style.height = "";
+        shadow.style.zIndex = "";
+        shadow.style.position = "fixed";
 
-        setTimeout(function(){
-            card.style.zIndex="";
-        },300);
-        
+        setTimeout(function() {
+            card.style.zIndex = "";
+        }, 300);
+
         //Disable scrolling
-        document.body.style.overflowY="hidden";
-        
+        document.body.style.overflowY = "hidden";
+
     }
     /* TOGGLE OBJECT's SHADOW*/
     card.classList.toggle("low-shadow");
 }
 
 /*NOTE DISPLAY*/
-function note_toggle(){ 
+function note_toggle() {
     var noteContent = note.getElementsByClassName("content")[0];
     var stickers = note.getElementsByClassName("sticker")[0];
     var laptop = document.getElementById("laptop");
     note.classList.toggle("hover");
 
-    if (note.style.zIndex!="100"){
-        shadow.style.zIndex="99";
-        shadow.style.opacity="100%";
+    if (note.style.zIndex != "100") {
+        shadow.style.zIndex = "99";
+        shadow.style.opacity = "100%";
 
-        note.style.zIndex="100";
-        note.style.transformOrigin="center";
-        note.style.top="50%";
-        note.style.left="50%";
-        note.style.transform="translate(-50%, -50%) scale(3)";
+        note.style.zIndex = "100";
+        note.style.transformOrigin = "center";
+        note.style.top = "50%";
+        note.style.left = "50%";
+        note.style.transform = "translate(-50%, -50%) scale(3)";
 
-        noteContent.style.transform="rotateY(180deg)";
+        noteContent.style.transform = "rotateY(180deg)";
 
         stickers.classList.add("sticker-active");
-    }
-    else{   
+    } else {
         stickers.classList.remove("sticker-active");
-        note.style.top="";
-        note.style.left="";
-        note.style.transform="";
-        noteContent.style.transform="";
-        note.style.transformOrigin="";
-        setTimeout(function(){
-            note.style.zIndex="";
-        },300);
+        note.style.top = "";
+        note.style.left = "";
+        note.style.transform = "";
+        noteContent.style.transform = "";
+        note.style.transformOrigin = "";
+        setTimeout(function() {
+            note.style.zIndex = "";
+        }, 300);
 
-        shadow.style.zIndex="";
-        shadow.style.opacity="";
+        shadow.style.zIndex = "";
+        shadow.style.opacity = "";
     }
     /* TOGGLE OBJECT's SHADOW*/
     note.classList.toggle("low-shadow");
-    
+
 }
-function cheems_is_here(){ 
+
+function cheems_is_here() {
     cheems.classList.toggle("cheems_toggle");
 }
 
 function debounce(func, wait, immediate) {
     var timeout;
     return function() {
-        var context = this, args = arguments;
+        var context = this,
+            args = arguments;
         var later = function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
@@ -118,35 +118,35 @@ function debounce(func, wait, immediate) {
 };
 
 /*MUSIC PLAYER*/
-var playingSong="audio/first_date.mp3";
+var playingSong = "audio/first_date.mp3";
 var barFill = document.getElementById("fill");
 var song = new Audio();
 
 window.onload = playSong;
 
-function playSong(){
+function playSong() {
     song.src = playingSong;
-    song.volume=0.2;
+    song.volume = 0.2;
     song.play();
-    if (!song.paused==true){ 
-        play_btn.innerHTML="||"
+    if (!song.paused == true) {
+        play_btn.innerHTML = "||"
     }
 }
 
-function playOrPause(){
-    if(song.paused){
-        play_btn.innerHTML="||"
+function playOrPause() {
+    if (song.paused) {
+        play_btn.innerHTML = "||"
         song.play();
-    } else{
-        play_btn.innerHTML="&#9658;"
+    } else {
+        play_btn.innerHTML = "&#9658;"
         song.pause();
     }
 }
 
-song.addEventListener('timeupdate',function(){
+song.addEventListener('timeupdate', function() {
     var position = song.currentTime / song.duration;
     barFill.style.width = position * 100 + '%';
-    if (position==1){ 
-        play_btn.innerHTML="&#9658;";
+    if (position == 1) {
+        play_btn.innerHTML = "&#9658;";
     }
 });

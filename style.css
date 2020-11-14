@@ -6,755 +6,847 @@
 */
 
 @font-face {
-    font-family: "UTM Androgyne";
-    src: url(fonts/UTM_Androgyne.ttf) format("truetype");
-}
-@font-face{ 
-    font-family: "MTO  Astro City";
-    src: url(fonts/MTO_Astro_City.ttf) format("truetype");
+	font-family: "UTM Androgyne";
+	src: url(fonts/UTM_Androgyne.ttf) format("truetype");
 }
 
-.table{
-    position: relative;
-    margin: auto;
-    width: 80%;
-    height: 100%;
-    max-width: 1000px;
-    min-width: inherit;
+@font-face {
+	font-family: "MTO  Astro City";
+	src: url(fonts/MTO_Astro_City.ttf) format("truetype");
 }
-.preload *{ 
-    -webkit-transition: none; 
-    -o-transition: none; 
-    transition: none;
+
+.table {
+	position: relative;
+	margin: auto;
+	width: 80%;
+	height: 100%;
+	max-width: 1000px;
+	min-width: inherit;
 }
-#inner-shadow{ 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    -webkit-box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
-            box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5) ;
+
+.preload * {
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
 }
-#shadow{ 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    opacity: 0%;
-    background-color: rgba(0,0,0,0.75);
-    -webkit-transition-duration: .25s;
-         -o-transition-duration: .25s;
-            transition-duration: .25s;
+
+#inner-shadow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	-webkit-box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5);
+	box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, .5);
 }
-html, body{ 
-    width: 100%;
-    height: 100%;
+
+#shadow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0%;
+	background-color: rgba(0, 0, 0, 0.75);
+	-webkit-transition-duration: .25s;
+	-o-transition-duration: .25s;
+	transition-duration: .25s;
 }
-body{
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-image: url(images/table12.jpg);
-    padding: 0;
-    margin: 0;
+
+html,
+body {
+	width: 100%;
+	height: 100%;
 }
+
+body {
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url(images/table12.jpg);
+	padding: 0;
+	margin: 0;
+}
+
 @media only screen and (min-width: 980px) {
-    body {
-        background-size: auto;
-    }
-}
-body *{ 
-    outline: none;
-    -webkit-transition-duration: .5s;
-         -o-transition-duration: .5s;
-            transition-duration: .5s;
-}
-#card{ 
-    font-family: "UTM Avo";
-    width: 30rem;
-    height: 300px;
-    position: relative;
-    top: 12rem;
-    left: 25rem;
-    -webkit-perspective: 2000px;
-            perspective: 2000px;
-}
-#card>.card-cover{ 
-    position: absolute;
-    width: 100%;
-    height: 300px;
-    bottom: 0%;
-    left:0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    z-index: 10;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-transform: rotateX(20deg);
-            transform: rotateX(20deg);
-    -webkit-transform-origin: top;
-        -ms-transform-origin: top;
-            transform-origin: top;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-}
-.front, .back{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-}
-.back{
-    -webkit-transform: rotateX(180deg);
-            transform: rotateX(180deg);
-}
-#card.hover{
-    -webkit-transform: rotate(10deg);
-        -ms-transform: rotate(10deg);
-            transform: rotate(10deg);
-}
-#card.hover:hover{
-    -webkit-transform: rotate(5deg);
-        -ms-transform: rotate(5deg);
-            transform: rotate(5deg);
-    cursor: pointer;
-}
-.card-cover>.front{ 
-    background-image: url(images/card-background.png);
+	body {
+		background-size: auto;
+	}
 }
 
-.card-cover>.back{ 
-    color: #ffdf00;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    background-image: url(images/background-1.png);
-    
+body * {
+	outline: none;
+	-webkit-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	transition-duration: .5s;
 }
 
-.card-object>.container>img{ 
-    position: absolute;
-    -webkit-filter: drop-shadow(0 0 3px #ffdf00);
-            filter: drop-shadow(0 0 3px #ffdf00);
-}
-.card-cover>.back>.card-object>.container>img:nth-child(1){ 
-    height: 100px;
-    top: -1rem;
-    left: -2rem;
-}
-.card-cover>.back>.card-object>.container>img:nth-child(2){ 
-    height: 30px;
-    right: 2rem;
-    top: 0rem;
-}
-.card-cover>.back>.card-object>.container>img:nth-child(3){ 
-    height: 60px;
-    right: -1rem;
-    top: 1rem;
+#card {
+	font-family: "UTM Avo";
+	width: 30rem;
+	height: 300px;
+	position: relative;
+	top: 12rem;
+	left: 25rem;
+	-webkit-perspective: 2000px;
+	perspective: 2000px;
 }
 
-.content{ 
-    font-size: 1rem;
+#card>.card-cover {
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	bottom: 0%;
+	left: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	z-index: 10;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-transform: rotateX(20deg);
+	transform: rotateX(20deg);
+	-webkit-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
-.card-cover>.back>.content{ 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    top: 0;
-    left: 0;
-    padding: 30px 50px;
+
+.front,
+.back {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
-.card-content.normal-shadow{ 
-    box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+
+.back {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
-.card-content{
-    color: #ffdf00;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-family: "UTM Androgyne";
-    width: 100%;
-    height: 300px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    
-    position: absolute;
-    bottom: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-image: url(images/background-1.png);
+
+#card.hover {
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	transform: rotate(10deg);
 }
-.card-object{ 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+
+#card.hover:hover {
+	-webkit-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+	cursor: pointer;
 }
-.card-object>.container{ 
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 100%;
+
+.card-cover>.front {
+	background-image: url(images/card-background.png);
 }
-.card-content>.card-object>.container>img:nth-child(1){ 
-    height: 120px;
-    right: -2rem;
-    bottom: -2rem;
+
+.card-cover>.back {
+	color: #ffdf00;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-image: url(images/background-1.png);
 }
-.card-content>.card-object>.container>img:nth-child(2){ 
-    width: 25%;
-    /* transform: rotate(15deg); */
-    position: absolute;
-    top: -0.5rem;
-    left: 0rem;
+
+.card-object>.container>img {
+	position: absolute;
+	-webkit-filter: drop-shadow(0 0 3px #ffdf00);
+	filter: drop-shadow(0 0 3px #ffdf00);
 }
-.card-content>.content{ 
-    display: block;
-    position: relative;
-    padding: 30px 50px;
-    
+
+.card-cover>.back>.card-object>.container>img:nth-child(1) {
+	height: 100px;
+	top: -1rem;
+	left: -2rem;
 }
-.card-content>.content>div:nth-child(1)>img{ 
-    position: absolute;
-    height: 30px;
-    -webkit-transform: rotate(10deg);
-        -ms-transform: rotate(10deg);
-            transform: rotate(10deg);
+
+.card-cover>.back>.card-object>.container>img:nth-child(2) {
+	height: 30px;
+	right: 2rem;
+	top: 0rem;
 }
-.card-content>div:nth-child(3){ 
-    position: absolute;
-    bottom: 20px;
-    right: 100px;
+
+.card-cover>.back>.card-object>.container>img:nth-child(3) {
+	height: 60px;
+	right: -1rem;
+	top: 1rem;
 }
-.low-shadow{
-    -webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
-            filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
+
+.content {
+	font-size: 1rem;
 }
-.normal-shadow{
-    -webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
-            filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
+
+.card-cover>.back>.content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	padding: 30px 50px;
 }
-#pencil{ 
-    position: absolute;
-    top: 47rem;
-    z-index: 10;
-    left: 15rem;
-    width: 500px;
-    -webkit-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
-    transform: rotate(20deg);
+
+.card-content.normal-shadow {
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
 }
-#pencil>.normal-shadow{ 
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .5));
+
+.card-content {
+	color: #ffdf00;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-family: "UTM Androgyne";
+	width: 100%;
+	height: 300px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	background-image: url(images/background-1.png);
 }
-#card.hover:hover ~  #pencil{
-    top: 52rem;
-    left: 10rem;
-    -webkit-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-    transform: rotate(-5deg);
+
+.card-object {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
-#card.hover:hover>.card-cover{
-    -webkit-transform:  rotateX(35deg);
-            transform:  rotateX(35deg);
-    -webkit-box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);    
-        box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);
+
+.card-object>.container {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
-#laptop{ 
-    position: absolute;
-    width: 60rem;
-    -webkit-transform: rotate(-5deg);
-        -ms-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-    z-index: 11;
-    top: -15rem;
-    left: -5rem;
+
+.card-content>.card-object>.container>img:nth-child(1) {
+	height: 120px;
+	right: -2rem;
+	bottom: -2rem;
 }
-#eraser{ 
-    position: absolute;
-    top: 27rem;
-    width: 7rem;
-    left: 50rem;
-    -webkit-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg);
+
+.card-content>.card-object>.container>img:nth-child(2) {
+	width: 25%;
+	/* transform: rotate(15deg); */
+	position: absolute;
+	top: -0.5rem;
+	left: 0rem;
+}
+
+.card-content>.content {
+	display: block;
+	position: relative;
+	padding: 30px 50px;
+}
+
+.card-content>.content>div:nth-child(1)>img {
+	position: absolute;
+	height: 30px;
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+
+.card-content>div:nth-child(3) {
+	position: absolute;
+	bottom: 20px;
+	right: 100px;
+}
+
+.low-shadow {
+	-webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
+	filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .25));
+}
+
+.normal-shadow {
+	-webkit-filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
+	filter: drop-shadow(0px 0 5px rgba(0, 0, 0, .5));
+}
+
+#pencil {
+	position: absolute;
+	top: 47rem;
+	z-index: 10;
+	left: 15rem;
+	width: 500px;
+	-webkit-transform: rotate(20deg);
+	-ms-transform: rotate(20deg);
+	transform: rotate(20deg);
+}
+
+#pencil>.normal-shadow {
+	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .5));
+}
+
+#card.hover:hover~#pencil {
+	top: 52rem;
+	left: 10rem;
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	transform: rotate(-5deg);
+}
+
+#card.hover:hover>.card-cover {
+	-webkit-transform: rotateX(35deg);
+	transform: rotateX(35deg);
+	-webkit-box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);
+	box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, .25);
+}
+
+#laptop {
+	position: absolute;
+	width: 60rem;
+	-webkit-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	z-index: 11;
+	top: -15rem;
+	left: -5rem;
+}
+
+#eraser {
+	position: absolute;
+	top: 27rem;
+	width: 7rem;
+	left: 50rem;
+	-webkit-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+#cheems {
+	position: absolute;
+	top: 475px;
+	left: -72px;
+	width: 163px;
+	opacity: 0%;
+}
+
+.cheems_toggle {
+	opacity: 60% !important;
+}
+
+#coffee_cup {
+	position: absolute;
+	top: 25rem;
+	left: -10rem;
+	width: 20rem;
+	-webkit-transform: rotate(120deg);
+	-ms-transform: rotate(120deg);
+	transform: rotate(120deg);
+}
+
+#coffee_cup.heavy-shadow {
+	-webkit-filter: drop-shadow(-5px -10px 10px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow(-5px -10px 10px rgba(0, 0, 0, 0.25))
+}
+
+#card.hover:hover~#eraser {
+	top: 25rem;
+	left: 55rem;
+	-webkit-transform: rotate(50deg);
+	-ms-transform: rotate(50deg);
+	transform: rotate(50deg);
 }
 
 
-#cheems{
-    position: absolute;
-    top: 475px;
-    left: -72px;
-    width: 163px;
-    opacity: 0%;
-}
-.cheems_toggle { 
-opacity: 60% !important;
-}
-#coffee_cup{ 
-    position: absolute;
-    top: 25rem;
-    left: -10rem;
-    width: 20rem;
-    -webkit-transform: rotate(120deg);
-        -ms-transform: rotate(120deg);
-            transform: rotate(120deg);
-}
-#coffee_cup.heavy-shadow{ 
-    -webkit-filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25)); 
-            filter: drop-shadow(-5px -10px 10px rgba(0,0,0,0.25))
-}
-#card.hover:hover ~ #eraser{ 
-    top: 25rem;
-    left: 55rem;
-    -webkit-transform: rotate(50deg);
-    -ms-transform: rotate(50deg);
-    transform: rotate(50deg);
-}
 /* MUSIC PLAYER */
 
-#musicPlayer{
-    position: relative;
-    overflow: hidden;
-    width: 150px;
-    height: 225px;
-    top: 5rem;
-    left: 55rem;
-    transform: rotate(5deg);
-}
-#musicPlayer>img{ 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-.ipod-screen{
-    width: calc(100% - 26px);
-    height: calc(50% - 26px);
-    top: 0;
-    position: relative;
-    left: 0;
-    padding: 13px;
-    z-index: -1;
-}   
-.ipod-bg{
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: url(images/ipod_background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+#musicPlayer {
+	position: relative;
+	overflow: hidden;
+	width: 150px;
+	height: 225px;
+	top: 5rem;
+	left: 55rem;
+	transform: rotate(5deg);
 }
 
-.ipod-bg>img{
-   width: 100%;
-   height: 100%;
-   z-index: 1;
+#musicPlayer>img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
-.bar  { 
-    position: relative;
-    width: 100%;
-    height: 5px;
-    top: -20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+.ipod-screen {
+	width: calc(100% - 26px);
+	height: calc(50% - 26px);
+	top: 0;
+	position: relative;
+	left: 0;
+	padding: 13px;
+	z-index: -1;
 }
-.statusBar{
-    width: inherit;
-    position: absolute;
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .5);
-    height: 12px;
-    top: 12px;
+
+.ipod-bg {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: url(images/ipod_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-.statusBar>img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
+
+.ipod-bg>img {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 }
-#songTitle{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 45%;
-    text-align: center;
+
+.bar {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	top: -20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
-#play_btn{
-    border: none;
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: rgba(206,207,212, 0.75);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    left: 50%;
-    top: 15%;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-    z-index: 0;
+
+.statusBar {
+	width: inherit;
+	position: absolute;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .5);
+	height: 12px;
+	top: 12px;
 }
-#seekBar{
-    width: 80%;
-    height: 80%;
-    background-color: white;
-    box-shadow: 0 0 5px 0 rgba(0,0,0, 0.5);
-    border-radius: 5px;
-    top: 0;
-    left: 0;
-    overflow: hidden;   
+
+.statusBar>img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
-#fill{
-    width: 0px;
-    height: 5px;
-    background-image:linear-gradient(90deg, white 5%, rgb(75,154,198) 80%);
+
+#songTitle {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 45%;
+	text-align: center;
 }
+
+#play_btn {
+	border: none;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: rgba(206, 207, 212, 0.75);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	left: 50%;
+	top: 15%;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: bold;
+	z-index: 0;
+}
+
+#seekBar {
+	width: 80%;
+	height: 80%;
+	background-color: white;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#fill {
+	width: 0px;
+	height: 5px;
+	background-image: linear-gradient(90deg, white 5%, rgb(75, 154, 198) 80%);
+}
+
 
 /* =========================================== =========== ========================================================= */
+
+
 /* =========================================== CREDIT NOTE ========================================================= */
-#note{
-    font-family: "MTO  Astro City";
-    width: 150px;
-    height: 150px;
-    position: absolute;
-}
-#note>.content{
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    width: 100%;
-    height: 100%;
-}
-#note>.content>.front{
-    text-transform: uppercase;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background-color: #ffff8d;
 
-    -webkit-box-align: center;
+#note {
+	font-family: "MTO  Astro City";
+	width: 150px;
+	height: 150px;
+	position: absolute;
+}
 
-        -ms-flex-align: center;
+#note>.content {
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+}
 
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+#note>.content>.front {
+	text-transform: uppercase;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: #ffff8d;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
-#note>.content>.front>div{ 
-    text-align: center;
+
+#note>.content>.front>div {
+	text-align: center;
 }
-#note>.content>.front>div>div>img{
-    width: 50%;
+
+#note>.content>.front>div>div>img {
+	width: 50%;
 }
-#note>.content>.front>div>div:nth-child(1){ 
-    margin: 0;
-    height: 65px;
+
+#note>.content>.front>div>div:nth-child(1) {
+	margin: 0;
+	height: 65px;
 }
-#note>.content>.back{ 
-    background-color: #ffff8d;
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    overflow: hidden;
+
+#note>.content>.back {
+	background-color: #ffff8d;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	overflow: hidden;
 }
-#note.hover:hover{
-    top: 22rem;
-    -ms-transform: rotate(-5deg);
-        transform: rotate(-5deg);
-    -webkit-transform: rotate(-5deg);
-    cursor: pointer;
+
+#note.hover:hover {
+	top: 22rem;
+	-ms-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	cursor: pointer;
 }
-#note.hover{ 
-    -ms-transform: rotate(-10deg); 
-        transform: rotate(-10deg);
-    -webkit-transform: rotate(-10deg);
-    top: 20rem;
-    left: 12rem;
+
+#note.hover {
+	-ms-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	top: 20rem;
+	left: 12rem;
 }
 
 
 /* ================================================================================================================== */
+
+
 /* ============================================= THE LETTER MODAL =================================================== */
+
 .modal {
-    display: none;
-    position: absolute;
-    opacity: 0;
-    z-index: 999;
-    left: 50%;
-    top: 50%;
-    width: 500px;
-    height: 300px;
-    -ms-transform: translate(-50%, -50%) scale(2);
-        transform: translate(-50%, -50%) scale(2);
-    -webkit-transform: translate(-50%, -50%) scale(2);
-    overflow: hidden;
-    background-color: transparent;
+	display: none;
+	position: absolute;
+	opacity: 0;
+	z-index: 999;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 300px;
+	-ms-transform: translate(-50%, -50%) scale(2);
+	transform: translate(-50%, -50%) scale(2);
+	-webkit-transform: translate(-50%, -50%) scale(2);
+	overflow: hidden;
+	background-color: transparent;
 }
-.modal>.close-btn{ 
-    position: absolute;
-    top: 10px;
-    right: 10px;
+
+.modal>.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 
 /* Modal Content/Box */
+
 .modal-box {
-    background-image: url("images/modal/background.jpg");
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-.modal_close_button{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-}
-.modal_close_button:hover{
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-}
-.right_modal_close_btn{
-    margin-right: 50px;
-    float: right;
-}
-.modal-content{
-    margin-top: 40px;
-}
-.modal_letter_header{
-    margin: 5px;
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-}
-.modal_letter_second_header{
-    margin: 5px;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-}
-.title_modal_letter{
-    margin: 5px;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-}
-.modal_text{
-    font-size: 20px;
-}
-.user-info{ 
-    position: relative;
-}
-.user-info{
-    position: absolute;
-    top: 0;
-    left: 0
-}
-.user{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    height: 20%;
-    font-size: 10px;
-    padding: 5px;
-}
-.user>.avatar{ 
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-}
-#sv-518h0584>.avatar{ 
-    background-image: url(images/avatar/518h0584.jpg);
-}
-#sv-518h0076>.avatar{ 
-    background-image: url(images/avatar/518h0076.jpg);
-}
-#sv-518h0044>.avatar{ 
-    background-image: url(images/avatar/518h0044.jpg);
-}
-.sticker{ 
-    width: 200%;
-    height: 200%;
-    position: relative;
-}
-.sticker>img{ 
-    position: absolute;
-}
-.sticker>img:nth-child(1){ 
-    width: 50px;
-    bottom: -10px;
-    left: -10px;
-    -webkit-transform: rotate(20deg);
-        -ms-transform: rotate(20deg);
-            transform: rotate(20deg);
-    -webkit-filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
-            filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
-}
-.sticker>img:nth-child(2){ 
-    width: 40px;
-    bottom: -10px;
-    right: -10px;
-    -webkit-transform: rotate(-20deg);
-        -ms-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-    -webkit-filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
-            filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
-}
-.sticker-active{
-    width: 100%;
-    height: 100%;
-    -webkit-transition-delay: .25s;
-         -o-transition-delay: .25s;
-            transition-delay: .25s;
+	background-image: url("images/modal/background.jpg");
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
 }
 
-.content-text{
-    font-family: "UTM Avo";
-    padding-left: 12%;
-    padding-right: 12%;
-    font-size: 17px;
+.modal_close_button {
+	position: absolute;
+	width: 50px;
+	height: 50px;
 }
 
-#rose-right{
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    opacity: 0.3;
-    right: -6%;
-    bottom: 0;
-    top: 0;
+.modal_close_button:hover {
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
 }
 
-.rose-head-text{
-    width: 18px;
-    height: 15px;
+.right_modal_close_btn {
+	margin-right: 50px;
+	float: right;
 }
 
-#rose-corner-left{
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: -2%;
-    left: -3%;
-    opacity: 0.3;
-    -webkit-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-            transform: rotate(270deg);
+.modal-content {
+	margin-top: 40px;
 }
 
-#rose-corner-right{
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    bottom: -2%;
-    right: -3%;
-    opacity: 0.3;
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
+.modal_letter_header {
+	margin: 5px;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
 }
-.area{ 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex;
-    font-size: 0.8rem;
-    position: relative;
-    width: 30rem;
-    overflow: hidden;
-    font-family: "UTM Androgyne";
-    color:#ffdf00;
-    padding: 5px 0px;
-    margin-left: -50px;
+
+.modal_letter_second_header {
+	margin: 5px;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
 }
-.area:nth-child(1){ 
-    display: block;
-    text-align: center;
-    font-size: 1rem;
+
+.title_modal_letter {
+	margin: 5px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
 }
-.area:nth-child(2){ 
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
+
+.modal_text {
+	font-size: 20px;
 }
-.area:nth-child(3){ 
-    left: 0px;
-    height: 80px;
-    padding-right: 50px;
+
+.user-info {
+	position: relative;
 }
-.area:nth-child(3)>.text{ 
-    padding-right: 50px;
-    width: 30%;
+
+.user-info {
+	position: absolute;
+	top: 0;
+	left: 0
 }
-.area:nth-child(3)>.img{ 
-    width: 70%;
-    height: 100%;
-    background-image: url(images/teacher/teacher1.png);
-    background-size: cover;
-    background-position: center;
-    margin-right: 10px;
+
+.user {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: left;
+	-ms-flex-pack: left;
+	justify-content: left;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 20%;
+	font-size: 10px;
+	padding: 5px;
 }
-.area:nth-child(4){ 
-    left: 0px;
-    height: 90px;
+
+.user>.avatar {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
 }
-.area:nth-child(4)>.text{ 
-    padding-left: 50px;
-    width: 30%;
+
+#sv-518h0584>.avatar {
+	background-image: url(images/avatar/518h0584.jpg);
 }
-.area:nth-child(4)>.img{ 
-    width: 70%;
-    height: 100%;
-    background-image: url(images/teacher/teachers.png);
-    background-size: cover;
-    background-position: top;
-    margin-left: 5px;
+
+#sv-518h0076>.avatar {
+	background-image: url(images/avatar/518h0076.jpg);
+}
+
+#sv-518h0044>.avatar {
+	background-image: url(images/avatar/518h0044.jpg);
+}
+
+.sticker {
+	width: 200%;
+	height: 200%;
+	position: relative;
+}
+
+.sticker>img {
+	position: absolute;
+}
+
+.sticker>img:nth-child(1) {
+	width: 50px;
+	bottom: -10px;
+	left: -10px;
+	-webkit-transform: rotate(20deg);
+	-ms-transform: rotate(20deg);
+	transform: rotate(20deg);
+	-webkit-filter: drop-shadow(2px 3px 0px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow(2px 3px 0px rgba(0, 0, 0, 0.25));
+}
+
+.sticker>img:nth-child(2) {
+	width: 40px;
+	bottom: -10px;
+	right: -10px;
+	-webkit-transform: rotate(-20deg);
+	-ms-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+	-webkit-filter: drop-shadow(2px 3px 0px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow(2px 3px 0px rgba(0, 0, 0, 0.25));
+}
+
+.sticker-active {
+	width: 100%;
+	height: 100%;
+	-webkit-transition-delay: .25s;
+	-o-transition-delay: .25s;
+	transition-delay: .25s;
+}
+
+.content-text {
+	font-family: "UTM Avo";
+	padding-left: 12%;
+	padding-right: 12%;
+	font-size: 17px;
+}
+
+#rose-right {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	opacity: 0.3;
+	right: -6%;
+	bottom: 0;
+	top: 0;
+}
+
+.rose-head-text {
+	width: 18px;
+	height: 15px;
+}
+
+#rose-corner-left {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: -2%;
+	left: -3%;
+	opacity: 0.3;
+	-webkit-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+#rose-corner-right {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	bottom: -2%;
+	right: -3%;
+	opacity: 0.3;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.area {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 0.8rem;
+	position: relative;
+	width: 30rem;
+	overflow: hidden;
+	font-family: "UTM Androgyne";
+	color: #ffdf00;
+	padding: 5px 0px;
+	margin-left: -50px;
+}
+
+.area:nth-child(1) {
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+}
+
+.area:nth-child(2) {
+	width: 100%;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.area:nth-child(3) {
+	left: 0px;
+	height: 80px;
+	padding-right: 50px;
+}
+
+.area:nth-child(3)>.text {
+	padding-right: 50px;
+	width: 30%;
+}
+
+.area:nth-child(3)>.img {
+	width: 70%;
+	height: 100%;
+	background-image: url(images/teacher/teacher1.png);
+	background-size: cover;
+	background-position: center;
+	margin-right: 10px;
+}
+
+.area:nth-child(4) {
+	left: 0px;
+	height: 90px;
+}
+
+.area:nth-child(4)>.text {
+	padding-left: 50px;
+	width: 30%;
+}
+
+.area:nth-child(4)>.img {
+	width: 70%;
+	height: 100%;
+	background-image: url(images/teacher/teachers.png);
+	background-size: cover;
+	background-position: top;
+	margin-left: 5px;
 }
