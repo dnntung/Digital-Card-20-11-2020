@@ -97,6 +97,9 @@ function note_toggle(){
     note.classList.toggle("low-shadow");
     
 }
+function cheems_is_here(){ 
+    cheems.classList.toggle("cheems_toggle");
+}
 
 /*MUSIC PLAYER*/
 var playingSong="audio/first_date.mp3";

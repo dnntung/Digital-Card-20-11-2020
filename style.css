@@ -283,11 +283,23 @@ body *{
 #eraser{ 
     position: absolute;
     top: 27rem;
-    width: 5rem;
+    width: 7rem;
     left: 50rem;
     -webkit-transform: rotate(30deg);
     -ms-transform: rotate(30deg);
     transform: rotate(30deg);
+}
+
+
+#cheems{
+    position: absolute;
+    top: 475px;
+    left: -72px;
+    width: 163px;
+    opacity: 0%;
+}
+.cheems_toggle { 
+opacity: 60% !important;
 }
 #coffee_cup{ 
     position: absolute;
