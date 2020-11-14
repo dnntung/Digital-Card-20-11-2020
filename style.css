@@ -649,7 +649,7 @@ opacity: 60% !important;
     -webkit-filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
             filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.25));
 }
-.sticker-active{ 
+.sticker-active{
     width: 100%;
     height: 100%;
     -webkit-transition-delay: .25s;
