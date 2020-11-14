@@ -8,6 +8,7 @@ function card_toggle(){
     card.classList.toggle("hover");
 
     if (card.style.zIndex!="100"){
+        rose_leak.src="images/gold-rose.gif";
         card.style.zIndex="100";
         card.style.height="600px";
         card.style.transformOrigin="top";
@@ -28,6 +29,7 @@ function card_toggle(){
         document.body.style.overflowY="auto";
     }
     else{ 
+        rose_leak.src="images/gold-rose.png";
         document.body.scrollTop=0;
         document.documentElement.scrollTop=0;
 
